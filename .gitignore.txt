@@ -1,0 +1,47 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# PyTorch model files
+*.pt
+*.pth
+*.ckpt
+
+# Dataset folders
+data/
+datasets/
+
+# Training outputs
+outputs/
+runs/
+checkpoints/
+logs/
+
+# Profiling outputs
+*.nsys-rep
+*.qdrep
+*.sqlite
+*.ncu-rep
+
+# VS Code / JetBrains
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
