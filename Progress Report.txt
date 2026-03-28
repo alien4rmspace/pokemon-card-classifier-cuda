@@ -1,0 +1,3 @@
+fetches Pokémon card metadata from an API
+downloads card images automatically
+organizes images into training, validation, and test sets
