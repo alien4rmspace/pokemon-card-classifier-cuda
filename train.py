@@ -39,17 +39,17 @@ def split_dataset(source_root: Path, split_root: Path) -> None:
         val_files = image_files[train_count:train_count + val_count]
         test_files = image_files[train_count + val_count:]
 
-    for split_name, split_files in [
-        ("train", train_files),
-        ("val", val_files),
-        ("test", test_files),
-    ]:
-        split_dir = split_root / split_name / class_name
-        split_dir.mkdir(parents=True, exist_ok=True)
-        for file_path in split_files:
-            shutil.copy(file_path, split_dir / file_path.name)
+        for split_name, split_files in [
+            ("train", train_files),
+            ("val", val_files),
+            ("test", test_files),
+        ]:
+            split_dir = split_root / split_name / class_name
+            split_dir.mkdir(parents=True, exist_ok=True)
+            for file_path in split_files:
+                shutil.copy(file_path, split_dir / file_path.name)
 
-        print(f"{class_name}: total = {total}, train = {len(train_files)}, val = {len(val_files)}, test = {len(test_files)}")
+            print(f"{class_name}: total = {total}, train = {len(train_files)}, val = {len(val_files)}, test = {len(test_files)}")
 
 async def download_card_image(sem: asyncio.Semaphore, session: aiohttp.ClientSession, card, index: int, pokemonName: str) -> None:
     if not card.image:
