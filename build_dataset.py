@@ -14,18 +14,69 @@ import requests
 from tcgdexsdk import TCGdex, Query
 from pathlib import Path
 
+DOWNLOAD_CARDS = True
+SPLIT_CARDS = True
+
 random.seed(42)
 
 SOURCE_ROOT = Path("data/pokemon_cards/pokemons")
 SPLIT_ROOT = Path("data/pokemon_cards/split")
-DOWNLOAD_CARDS = False
-SPLIT_CARDS = False
 TRAIN_RATIO = 0.8
 VAL_RATIO = 0.1
 TEST_RATIO = 0.1
 
-POKEMON_NAMES = ["Pikachu", "Charizard", "Mewtwo", "Eevee", "Meowth", "Raichu", "Lucario", "Snorlax"]
-
+POKEMON_NAMES = [
+    "Pikachu",
+    "Charizard",
+    "Mewtwo",
+    "Eevee",
+    "Lucario",
+    "Snorlax",
+    "Gengar",
+    "Bulbasaur",
+    "Squirtle",
+    "Charmander",
+    "Greninja",
+    "Rayquaza",
+    "Mew",
+    "Dragonite",
+    "Garchomp",
+    "Umbreon",
+    "Sylveon",
+    "Arcanine",
+    "Lapras",
+    "Gardevoir",
+    "Blastoise",
+    "Venusaur",
+    "Tyranitar",
+    "Metagross",
+    "Salamence",
+    "Zoroark",
+    "Riolu",
+    "Jigglypuff",
+    "Vaporeon",
+    "Jolteon",
+    "Flareon",
+    "Espeon",
+    "Leafeon",
+    "Glaceon",
+    "Darkrai",
+    "Absol",
+    "Scizor",
+    "Machamp",
+    "Alakazam",
+    "Gyarados",
+    "Ditto",
+    "Psyduck",
+    "Mimikyu",
+    "Infernape",
+    "Sceptile",
+    "Blaziken",
+    "Empoleon",
+    "Chandelure",
+    "Togekiss",
+    "Dragapult"
+]
 
 def split_dataset(source_root: Path, split_root: Path) -> None:
     classes: list[Path] = [folder for folder in source_root.iterdir() if folder.is_dir()]

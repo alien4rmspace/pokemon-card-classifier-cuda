@@ -17,13 +17,21 @@ model.load_state_dict(checkpoint["model_state_dict"])
 model.to(device)
 model.eval()
 
+# Compare second model
+checkpoint = torch.load("pokemon_classification_model_v1_98.pth", map_location=device)
+model_compare = models.resnet18(weights=None)
+model_compare.fc = nn.Linear(model_compare.fc.in_features, num_classes)
+model_compare.load_state_dict(checkpoint["model_state_dict"])
+model_compare.to(device)
+model_compare.eval()
+
 # Testing
 eval_transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
 ])
 
-image_path = "data/pokemon_cards/test/charizard/Charizard[12].png"
+image_path = "data/pokemon_cards/test/charizard/Charizard.png"
 image = Image.open(image_path).convert("RGB")
 image_tensor = eval_transform(image).unsqueeze(0).to(device)
 
@@ -32,8 +40,14 @@ with torch.no_grad():
     outputs = model(image_tensor)
     _, pred = torch.max(outputs, 1)
 
+    outputs_2 = model_compare(image_tensor)
+    _, pred_2 = torch.max(outputs, 1)
+
 predicted_class = class_names[pred.item()]
 print(f"Predicted class: {predicted_class}")
+
+predicted_class = class_names[pred_2.item()]
+print(f"Predicted class for model 2: {predicted_class}")
 
 if __name__ == "__main__":
     checkpoint = torch.load("pokemon_classification_model_v1_94.pth")

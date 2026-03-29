@@ -51,6 +51,24 @@ model = model.to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
+def print_wrong_paths(model, loader, device):
+    model.eval()
+    sample_index = 0
+
+    with torch.no_grad():
+        for images, labels in loader:
+            images = images.to(device)
+            labels = labels.to(device)
+
+            outputs = model(images)
+            preds = torch.argmax(outputs, dim=1)
+
+            for i in range(len(labels)):
+                if preds[i] != labels[i]:
+                    print(loader.dataset.samples[sample_index + i][0])
+
+            sample_index += len(labels)
+
 def evaluate(model: nn.Module, loader: DataLoader, criterion: nn.Module, device: torch.device) -> tuple[float, float]:
     model.eval()
     total_loss = 0
@@ -95,8 +113,11 @@ for epoch in range(num_epochs):
 
         running_loss += loss.item()
 
+
+
     train_loss = running_loss / len(train_loader)
     val_loss, val_acc = evaluate(model, val_loader, criterion, device)
+    print_wrong_paths(model, val_loader, device)
 
     print(f"Epoch {epoch + 1}/{num_epochs}")
     print(f"Train Loss: {train_loss:.4f}")
@@ -105,7 +126,9 @@ for epoch in range(num_epochs):
     if (val_acc > best_val_accuracy):
         best_val_accuracy = val_acc
         torch.save({
+            "epoch": epoch,
             "model_state_dict": model.state_dict(),
+            "optimizer_state_dict": optimizer.state_dict(),
             "class_names": class_names,
             "num_classes": num_classes,
             "val_acc": val_acc,
