@@ -1,85 +1,54 @@
-import os
+import asyncio
 import random
+import re
 import shutil
-
-import torch
-from torch import nn, optim
-from torch.utils.data import DataLoader
-from torchvision import datasets, transforms, models
-import numpy as np
+from pathlib import Path
 
 import aiohttp
-import asyncio
-import requests
 from tcgdexsdk import TCGdex, Query
-from pathlib import Path
 
 DOWNLOAD_CARDS = True
 SPLIT_CARDS = True
 
 random.seed(42)
 
-SOURCE_ROOT = Path("data/pokemon_cards/pokemons")
+RAW_ROOT = Path("data/pokemon_cards/raw")
 SPLIT_ROOT = Path("data/pokemon_cards/split")
+
 TRAIN_RATIO = 0.8
 VAL_RATIO = 0.1
 TEST_RATIO = 0.1
 
-POKEMON_NAMES = [
-    "Pikachu",
-    "Charizard",
-    "Mewtwo",
-    "Eevee",
-    "Lucario",
-    "Snorlax",
-    "Gengar",
-    "Bulbasaur",
-    "Squirtle",
-    "Charmander",
-    "Greninja",
-    "Rayquaza",
-    "Mew",
-    "Dragonite",
-    "Garchomp",
-    "Umbreon",
-    "Sylveon",
-    "Arcanine",
-    "Lapras",
-    "Gardevoir",
-    "Blastoise",
-    "Venusaur",
-    "Tyranitar",
-    "Metagross",
-    "Salamence",
-    "Zoroark",
-    "Riolu",
-    "Jigglypuff",
-    "Vaporeon",
-    "Jolteon",
-    "Flareon",
-    "Espeon",
-    "Leafeon",
-    "Glaceon",
-    "Darkrai",
-    "Absol",
-    "Scizor",
-    "Machamp",
-    "Alakazam",
-    "Gyarados",
-    "Ditto",
-    "Psyduck",
-    "Mimikyu",
-    "Infernape",
-    "Sceptile",
-    "Blaziken",
-    "Empoleon",
-    "Chandelure",
-    "Togekiss",
-    "Dragapult"
-]
+MAX_CONCURRENT_CARDS = 30
+REQUEST_TIMEOUT = aiohttp.ClientTimeout(total=60)
+PROGRESS_EVERY = 100
+
+
+import re
+
+def normalize_pokemon_label(card_name: str) -> str:
+    name = card_name.strip().lower()
+
+    # Normalize separators first
+    name = name.replace("é", "e")
+    name = re.sub(r"[.\']", "", name)
+    name = re.sub(r"[-\s]+", "_", name)
+
+    # Remove common card-form suffixes at the end
+    suffix_pattern = (
+        r"(_("
+        r"ex|gx|v|vmax|vstar|lv_x|break|delta|δ"
+        r"))+$"
+    )
+    name = re.sub(suffix_pattern, "", name)
+
+    # Clean any leftover repeated underscores
+    name = re.sub(r"_+", "_", name).strip("_")
+
+    return name
 
 def split_dataset(source_root: Path, split_root: Path) -> None:
-    classes: list[Path] = [folder for folder in source_root.iterdir() if folder.is_dir()]
+    classes = [folder for folder in source_root.iterdir() if folder.is_dir()]
 
     for class_dir in classes:
         class_name = class_dir.name
@@ -101,68 +70,119 @@ def split_dataset(source_root: Path, split_root: Path) -> None:
         ]:
             split_dir = split_root / split_name / class_name
             split_dir.mkdir(parents=True, exist_ok=True)
+
             for file_path in split_files:
-                shutil.copy(file_path, split_dir / file_path.name)
+                shutil.copy2(file_path, split_dir / file_path.name)
 
-            print(f"{class_name}: total = {total}, train = {len(train_files)}, val = {len(val_files)}, test = {len(test_files)}")
+        print(
+            f"{class_name}: total={total}, "
+            f"train={len(train_files)}, val={len(val_files)}, test={len(test_files)}"
+        )
 
-async def download_card_image(sem: asyncio.Semaphore, session: aiohttp.ClientSession, card, index: int, pokemonName: str) -> None:
-    if not card.image:
-        print(f"{pokemonName}{index} has no image")
-        return
 
-    image_url = f"{card.image}/high.png"
-    filename = f"data/pokemon_cards/pokemons/{pokemonName.lower()}/{pokemonName}{index}.png"
-
+async def fetch_and_download_card(
+    sdk: TCGdex,
+    session: aiohttp.ClientSession,
+    sem: asyncio.Semaphore,
+    card_summary,
+) -> tuple[str, str]:
     async with sem:
-        async with session.get(image_url) as response:
-            response.raise_for_status()
-            content = await response.read()
+        try:
+            card_id = getattr(card_summary, "id", None)
+            card_name = getattr(card_summary, "name", None)
+            card_image = getattr(card_summary, "image", None)
 
-    with open(filename, "wb") as f:
-        f.write(content)
+            if not card_id:
+                return ("skipped", "unknown_id missing id")
 
-    print(f"Downloaded: {filename}")
+            if not card_name or not card_image:
+                full_card = await sdk.card.get(card_id)
+
+                if not full_card:
+                    return ("skipped", f"{card_id} missing full card data")
+
+                card_name = getattr(full_card, "name", None)
+                card_image = getattr(full_card, "image", None)
+
+                if not card_name or not card_image:
+                    return ("skipped", f"{card_id} missing metadata")
+
+            pokemon_label = normalize_pokemon_label(card_name)
+            folder = RAW_ROOT / pokemon_label
+            folder.mkdir(parents=True, exist_ok=True)
+
+            filename = folder / f"{card_id}.png"
+            if filename.exists():
+                return ("exists", str(filename))
+
+            image_url = f"{card_image}/high.png"
+
+            async with session.get(image_url) as response:
+                response.raise_for_status()
+                content = await response.read()
+
+            filename.write_bytes(content)
+            return ("downloaded", str(filename))
+
+        except Exception as e:
+            return ("failed", f"{getattr(card_summary, 'id', 'unknown')}: {e}")
+
 
 async def download_cards() -> None:
-    sem = asyncio.Semaphore(10)
     sdk = TCGdex("en")
+    sem = asyncio.Semaphore(MAX_CONCURRENT_CARDS)
 
-    async with aiohttp.ClientSession() as session:
-        for pokemonName in POKEMON_NAMES:
-            os.makedirs(f"data/pokemon_cards/pokemons/{pokemonName.lower()}", exist_ok=True)
+    pokemon_cards = await sdk.card.list(Query().equal("category", "Pokemon"))
+    print(f"Found {len(pokemon_cards)} Pokémon cards")
 
-            pokemon_cards = await sdk.card.list(
-                Query().equal("name",
-                              f"{pokemonName}|"
-                              f"{pokemonName} ex|"
-                              f"{pokemonName} EX|"
-                              f"{pokemonName} Ex|"
-                              f"{pokemonName} VSTAR|"
-                              f"{pokemonName} VStar|"
-                              f"{pokemonName} VMAX|"
-                              f"{pokemonName} GX|"
-                              f"{pokemonName} gx|"
-                              f"{pokemonName} V|"
-                              )
-            )
-            tasks = [
-                download_card_image(sem, session, card, i, pokemonName)
-                for i, card in enumerate(pokemon_cards)
-            ]
-            await asyncio.gather(*tasks, return_exceptions=True)
+    connector = aiohttp.TCPConnector(limit=MAX_CONCURRENT_CARDS)
+    async with aiohttp.ClientSession(timeout=REQUEST_TIMEOUT, connector=connector) as session:
+        tasks = [
+            fetch_and_download_card(sdk, session, sem, card_summary)
+            for card_summary in pokemon_cards
+        ]
+
+        downloaded = 0
+        skipped = 0
+        failed = 0
+        exists = 0
+        processed = 0
+
+        for coro in asyncio.as_completed(tasks):
+            status, message = await coro
+            processed += 1
+
+            if status == "downloaded":
+                downloaded += 1
+            elif status == "exists":
+                exists += 1
+            elif status == "skipped":
+                skipped += 1
+            else:
+                failed += 1
+                print(f"FAILED: {message}")
+
+            if processed % PROGRESS_EVERY == 0:
+                print(
+                    f"Processed {processed}/{len(tasks)} | "
+                    f"downloaded={downloaded}, exists={exists}, skipped={skipped}, failed={failed}"
+                )
+
+        print(f"Downloaded: {downloaded}")
+        print(f"Already existed: {exists}")
+        print(f"Skipped: {skipped}")
+        print(f"Failed: {failed}")
+
 
 def main() -> None:
-    print("Downloading Cards...")
+    print("Downloading cards...")
     if DOWNLOAD_CARDS:
         asyncio.run(download_cards())
 
-    print("Splitting Dataset...")
+    print("Splitting dataset...")
     if SPLIT_CARDS:
-        split_dataset(SOURCE_ROOT, SPLIT_ROOT)
-
+        split_dataset(RAW_ROOT, SPLIT_ROOT)
 
 
 if __name__ == "__main__":
     main()
-

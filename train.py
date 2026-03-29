@@ -71,7 +71,7 @@ def main() -> None:
 
         # Training config
         batch_size = 32
-        num_epochs = 40
+        num_epochs = 2
         learning_rate = 0.001
 
         with torch.cuda.nvtx.range("setup:transforms"):
