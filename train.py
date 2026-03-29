@@ -74,7 +74,8 @@ def evaluate(model: nn.Module, loader: DataLoader, criterion: nn.Module, device:
     accuracy = correct / total
     return avg_loss, accuracy
 
-num_epochs = 10
+num_epochs = 20
+best_val_accuracy = 0
 
 for epoch in range(num_epochs):
     model.train()
@@ -100,3 +101,20 @@ for epoch in range(num_epochs):
     print(f"Epoch {epoch + 1}/{num_epochs}")
     print(f"Train Loss: {train_loss:.4f}")
     print(f"Val Loss: {val_loss:.4f} | Val Acc: {val_acc:.4f}")
+
+    if (val_acc > best_val_accuracy):
+        best_val_accuracy = val_acc
+        torch.save({
+            "model_state_dict": model.state_dict(),
+            "class_names": class_names,
+            "num_classes": num_classes,
+            "val_acc": val_acc,
+        }, "best_resnet18_pokemon_cards.pth")
+        print(f"Saved model")
+
+
+def main() -> None:
+    evaluate(model, train_loader, criterion, device)
+
+if __name__ == "__main__":
+    main()

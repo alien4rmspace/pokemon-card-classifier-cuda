@@ -110,6 +110,8 @@ def main() -> None:
     if SPLIT_CARDS:
         split_dataset(SOURCE_ROOT, SPLIT_ROOT)
 
+
+
 if __name__ == "__main__":
     main()
 
