@@ -1,6 +1,6 @@
 # GPU-Accelerated Pokémon Card Classifier
 
-A deep learning image classification project built with PyTorch accelerated with CUDA to identify Pokémon from Pokémon card images. The project includes asynchronous dataset collection with TCGdex and aiohttp, dataset preprocessing and splitting, ResNet-18 training, and profiling with NVIDIA Nsight Systems.
+A deep learning image classification project built with PyTorch and accelerated with CUDA to identify Pokémon from Pokémon card images. The project includes asynchronous dataset collection with TCGdex and aiohttp, dataset preprocessing and splitting, ResNet-18 training, and profiling with NVIDIA Nsight Systems.
 
 ## Features
 
@@ -41,3 +41,16 @@ prepare_dataset.py
 train.py
 test.py
 README.md
+```
+
+## Data Cleaning / Label Normalization
+
+Raw card names from TCGdex often include card-specific mechanics, prefixes, and variants that are not useful for Pokémon-level classification. To keep labels consistent, the dataset pipeline normalizes card names to the base Pokémon identity.
+
+Examples:
+- `Tapu Bulu-GX` → `tapu_bulu`
+- `Tangrowth LV.X` → `tangrowth`
+- `Talonflame BREAK` → `talonflame`
+- `ns_darmanitan` → removed or normalized because the prefix is not informative for Pokémon identity
+
+This cleaning step reduces noisy labels, merges variant-specific card names into a shared Pokémon class, and improves dataset consistency for supervised learning.
