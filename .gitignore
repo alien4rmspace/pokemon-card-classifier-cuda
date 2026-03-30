@@ -50,3 +50,6 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Private files
+Progress Report.txt

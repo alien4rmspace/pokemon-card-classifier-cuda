@@ -1,0 +1,758 @@
+0d4d5b29617ab6f05fdf7c1a8292036b33fd8bad
+0df42a3402a35a348d06b968a195cd1eb3abd662
+f1400806263d6c102ef7fffe32d7c4b9598d0c5f
+d04d6ebce9e8394d6bb5881ccabbf70ce8557901
+7864910c6b9044dff749b3e235eb14c6b7f1d1e7
+ca7fc7abd89ed1fa9fa15300e4e7e472dbaeb56e
+996455fc5e113d35d1d27a049b8739b11a6e87b3
+7df051d2dfbff78bf8b9488de3150d1cd13cb6d1
+47357054a9bccd270cc818b4d424864ddd22a452
+8e63980d5bd12b46557f9eb9a9e82c88298edbe1
+94430089977b37367831f2fd1a261b011209eae4
+9831fd16b64b855cc8b79e6d95953299f59149c2
+ad848c3a259eab7d6976bb8208c1e3c03a65ddd9
+42870b052880a60bb908ac212145d6ef060e072f
+8b951b29725a0bf6df53565672c0280e8f0aa935
+ce96e9de6b4ae7da62b4dfc8bc1f6bc0deb4e433
+11fef088116b94b0feb4ccd17b77e837827b775f
+756bb793a32b0bcc9123160310c6c5b76df7e4a0
+acd04ebdcb1ff4d0228002f953a6ef336cd054f1
+3ecdadb21d784f788278ea6f650ef664c4a9b617
+cea4870044c1a668e85fecd3f343c9f3229ae7c2
+279730c284825f949a67db5b945d43d1f321a4b9
+674d538847a3efae74b41610aa2b8b8e949516df
+187781c50ad3552cc7a5ed16beba842a4d23c01f
+bd41bddce4bc3b5f25e537296838c7fc7bc48c29
+3657e421d41409bb93d5200fc7b5312572828c02
+987d34f4560b5c20a5956f89feec4c9aec5028ed
+cb865e59bd8ca7d1d8527e3e65a2950504519a94
+698141ea52b2d39e7ded4709c6a0d4d09eab2c90
+67e52691ed669654d21fc3c7ef3d1d315b3caf44
+a49a559dcd0f0831b1d5077fce1c7ef530e23adf
+10c6626708b5a6ce5a8ba809bb5e33947a967f14
+9e515e45458189df4c5723c3c165a719791547ea
+36f6e4f6292244766a10c7ce8ade27d2074e4faf
+301027b5f707138f1cf6ddcf162ceb0cdfe080bf
+528a28eacd83a5adc24acc1e7e0d3abe8b2b3436
+ce1fb3438a3dbae18d397ad94bf877a139db4268
+798cea6708af38de2ac5fd1d6d12d6c4c0547bb9
+032d4017848607db0ff03370465d3690d3929dba
+131ec4761d727c43c6e48cd9174ad6a839b35816
+d47fe8f2ba58f2fb5bc916fae07b137e7a2c9182
+6829e90fec6f01f1a7ce4bd4f84081461b291ead
+db5a711bb920000475fe81fb376757088812fc34
+fdcd25e3f4fd77a75e2b5a6810bc325f48a66cdf
+855648eda611a1e11ba81373ad74fff9ac56980c
+e2a4678ab76345dbe623c99b41ea3fe44a08ef8d
+b6b6c2a47a04aa8f14c9f425cc6908eea4710995
+d2dc2940c29df00e95220587d2a940fe0c7a996e
+a6b96885d341a88d2a09d0ecc2cb59fa7126c440
+a805e6b1006d2a9f8ccea7b2cda97a3d3390ad32 
+d076c55bba4b6a9444b67f2da4b9307e64702971 .gitignore
+f288702d2fa16d3cdf0035b15a9fcbc552cd88e7 LICENSE
+34411689d8ed269af0221d1322a293ea4e5653af Progress Report.txt
+d68017dbd4835e9a00aa49d5ba1355324a42a650 README.md
+508838c1499975a51e717c6d52fb7e296dd393e9 build_dataset.py
+07da0cc474ee52833071c167fd7862636a94f974 inference.py
+e0c71be899c27b59a8309561bcc296d946efa9db train.py
+7303bc9cfac968ccb186f5435c9ad7ec472c8c12 
+656e19d73a7c4b551a9d984a6f9901a3b7f76ad6 .gitignore
+3784000d0b1a04b7c5bb862834d90413e0f9fcc3 .idea
+13566b81b018ad684f3a35fee301741b2734c8f4 .idea/.gitignore
+97824ec9b0149e48c91dce4fee530335b327c686 .idea/inspectionProfiles
+105ce2da2d6447d11dfe32bfb846c3d5b199fc99 .idea/inspectionProfiles/profiles_settings.xml
+1d3ce46ba0d13183e3244cba5b930b5e27be4c6b .idea/misc.xml
+4a4c6f3c1ceb555f127263d1db88ac346025e1a7 .idea/modules.xml
+d8b3f6cbf0c04e3481a87fcd0d588f490d9fdac7 .idea/pokemon-card-classifier-cuda.iml
+830674470f8052bb64c64a5b513f5df2815a70c1 .idea/vcs.xml
+da069e29abee9d4ee98f1dcdc406d1ac5c97f111 
+f43472bc7566e6dee641dd7786b057d5d3992e17 pokemon_train_profile.qdstrm
+a0607cc14539b735d22ea9b69d7e1db63cd30766 
+1a49a45366928d1a488ee936f11afafac744d056 data
+8b159045767f0fa9ffc1be8a88f19f70f691bf8c data/pokemon_cards
+93166ab569cb03e571ef3064e293181d88872478 data/pokemon_cards/pokemons
+0ddaaa4ef83d49ce9271d436a90a5f842a087e58 data/pokemon_cards/pokemons/charizard
+fb2df57ab9d6807aecd2ed0cebd1180a87bf11bc data/pokemon_cards/pokemons/charizard/Charizard[0].png
+9a5764bda931f86ca1260c70bfd004845191fdc5 data/pokemon_cards/pokemons/charizard/Charizard[10].png
+3cdc07c48678d47b335c4eead0148cb55f7e2304 data/pokemon_cards/pokemons/charizard/Charizard[11].png
+b6a78b1781a97b7861f20b4a1e9ed8cfd3a63a37 data/pokemon_cards/pokemons/charizard/Charizard[12].png
+8821838e89a1d92508d83e607fd755e0b96f15ea data/pokemon_cards/pokemons/charizard/Charizard[13].png
+62e32637686af11132ee5a6cfa74fc8ce435a5e1 data/pokemon_cards/pokemons/charizard/Charizard[14].png
+bf0d81b19a0c2908496d1e3ad20803d345a454bf data/pokemon_cards/pokemons/charizard/Charizard[15].png
+f1a7107a818d0688960fd73350866af8439583fc data/pokemon_cards/pokemons/charizard/Charizard[16].png
+9fd7670ff90d2d7bcc94cea91c655efa007bc9e5 data/pokemon_cards/pokemons/charizard/Charizard[17].png
+2e6948f7e2705032e1e8aa5c305de55afdd6c6c5 data/pokemon_cards/pokemons/charizard/Charizard[18].png
+e88114865b93664b389189217968c6ab9adb8b86 data/pokemon_cards/pokemons/charizard/Charizard[19].png
+2764affa58026b7dbfac2924ba862fe125369dbb data/pokemon_cards/pokemons/charizard/Charizard[1].png
+6998162390492089a799241ec78f26b0bba2198b data/pokemon_cards/pokemons/charizard/Charizard[20].png
+9389595a7b44afde3048707edd8345aeba1e5c3f data/pokemon_cards/pokemons/charizard/Charizard[21].png
+c2132654350de0684994ea6e57c2b7469e8df534 data/pokemon_cards/pokemons/charizard/Charizard[22].png
+a16c961a60a07692c377abbd1f27d98ee93095a0 data/pokemon_cards/pokemons/charizard/Charizard[23].png
+82f1b2528f514fa69f5e31efa602e4b3396f192d data/pokemon_cards/pokemons/charizard/Charizard[24].png
+6aa349a3cb3969513368a5d9c3a6cf49f9d18bc4 data/pokemon_cards/pokemons/charizard/Charizard[25].png
+180b1bb8eff1240a62ce59bc8688c090dc9f9421 data/pokemon_cards/pokemons/charizard/Charizard[26].png
+b7c650d0ad56c6c8ea77b3b8a012a272113c2acc data/pokemon_cards/pokemons/charizard/Charizard[27].png
+701e21a25f757d3a7053a6a287dcae3e942ac437 data/pokemon_cards/pokemons/charizard/Charizard[28].png
+2822eb3eb58f1c1bd6683e77212b1d055bde9f38 data/pokemon_cards/pokemons/charizard/Charizard[29].png
+1455dc8bebfbaa86f942b3199e5e0c2985dccea1 data/pokemon_cards/pokemons/charizard/Charizard[2].png
+f0f5bfd98e2409622af2cbdbdc137cc0fff7d155 data/pokemon_cards/pokemons/charizard/Charizard[30].png
+deab66ca313d196bb394506622adbeb1a066d36c data/pokemon_cards/pokemons/charizard/Charizard[31].png
+9fccc71b328d421213294cd002739d7a345fe568 data/pokemon_cards/pokemons/charizard/Charizard[32].png
+5c3faf3a0d31b3e6500058a5ff21fdbdbd262287 data/pokemon_cards/pokemons/charizard/Charizard[33].png
+de087804cb2e515eaee66101f0681d27c798d131 data/pokemon_cards/pokemons/charizard/Charizard[34].png
+286af913bb2c4c0f5961db87cf95d77e1231ff6b data/pokemon_cards/pokemons/charizard/Charizard[35].png
+e292d5b24cfd29b5cf579adc6516dd88d920c0ee data/pokemon_cards/pokemons/charizard/Charizard[36].png
+bda639aec592ddbc9eb9f083887d9377510306a5 data/pokemon_cards/pokemons/charizard/Charizard[37].png
+f193ec0a75014b2780eaca9522dc2934a32a3b5a data/pokemon_cards/pokemons/charizard/Charizard[38].png
+4d3975a2e6f95449037991978da12d89c898d134 data/pokemon_cards/pokemons/charizard/Charizard[39].png
+4fa286165138ad18208b62b9cf6c7db89d6dd5ff data/pokemon_cards/pokemons/charizard/Charizard[40].png
+fe4951b41e1f7a4601b5cf7e69334ad6469b20ea data/pokemon_cards/pokemons/charizard/Charizard[41].png
+c3eff44f619532067067986e7654edd66358eabb data/pokemon_cards/pokemons/charizard/Charizard[42].png
+896b7929aedc381cc9f91767ff7e5f87f3258b48 data/pokemon_cards/pokemons/charizard/Charizard[43].png
+9013dd97bed970b1d33a3a7fd6ad0c376a77905e data/pokemon_cards/pokemons/charizard/Charizard[44].png
+46a4b9c1ee2c3351628fe5cf5d2c56230c8ee2a4 data/pokemon_cards/pokemons/charizard/Charizard[45].png
+bf414c1c5bbe2f4672d7aa8089f6c03f390b4d10 data/pokemon_cards/pokemons/charizard/Charizard[46].png
+84043d7ef28750607dae99bb27e661b6b0381938 data/pokemon_cards/pokemons/charizard/Charizard[47].png
+d2cb141159285457bfcb6e80f8edbd1b8ed4432b data/pokemon_cards/pokemons/charizard/Charizard[48].png
+5425839e55d2be3506ff7b4a6aaa1adfae3b483b data/pokemon_cards/pokemons/charizard/Charizard[49].png
+0661188f688cb1f9f78e763ce7f4350cca3bc358 data/pokemon_cards/pokemons/charizard/Charizard[50].png
+953cf632b7096eeb0a5b5149a4bf381889f6fb3d data/pokemon_cards/pokemons/charizard/Charizard[51].png
+06a002472bc537ecf1f38ea798279a338b96c0f6 data/pokemon_cards/pokemons/charizard/Charizard[52].png
+4cddcd51b29c330465126e55b4552c881f4b092e data/pokemon_cards/pokemons/charizard/Charizard[53].png
+a5229432ceeb4a944ed48688180f421e809eb336 data/pokemon_cards/pokemons/charizard/Charizard[54].png
+2210cb37e2d7ac2d546b79154c972b713d280be4 data/pokemon_cards/pokemons/charizard/Charizard[55].png
+024b01044b6e7f9ac00f760da00eb919cc718ab3 data/pokemon_cards/pokemons/charizard/Charizard[57].png
+1c1254be46f25ea3e2bdfd30a76799b8dad4d826 data/pokemon_cards/pokemons/charizard/Charizard[58].png
+b5b3b6e1becdb712110bd4b10ef7da12b803bf7a data/pokemon_cards/pokemons/charizard/Charizard[59].png
+3d1210296092ace2211785879b2ae80cc69db381 data/pokemon_cards/pokemons/charizard/Charizard[5].png
+6fd31d06651d820ced7f2be05437f45e414fa9a5 data/pokemon_cards/pokemons/charizard/Charizard[60].png
+6c797031e9800bab5de04e1bcd1ff1549f10e707 data/pokemon_cards/pokemons/charizard/Charizard[61].png
+5aa6fbd20b3bad1395cd4da3415403c1e6853b7b data/pokemon_cards/pokemons/charizard/Charizard[62].png
+58550c5863ff58141a8ae03ca3b9746cb2742f18 data/pokemon_cards/pokemons/charizard/Charizard[63].png
+697727a5e51e17ed4eb82709a71ece355081b0af data/pokemon_cards/pokemons/charizard/Charizard[64].png
+4bb421ab825d851481b1cc37c21901370436f5e6 data/pokemon_cards/pokemons/charizard/Charizard[65].png
+b513bf9086759c238db3474f713fd58c1eaa8753 data/pokemon_cards/pokemons/charizard/Charizard[66].png
+557d46469fcd6178a36673391c3bb8a23ed6be48 data/pokemon_cards/pokemons/charizard/Charizard[68].png
+a81a4dbb4f7bde40f5135ffe10f477d5eecc85bd data/pokemon_cards/pokemons/charizard/Charizard[6].png
+93ecdf17da3e9bc5f0ecfead159b4c86c91eecb1 data/pokemon_cards/pokemons/charizard/Charizard[70].png
+f83068be011cb42223b1cdd6a0f561aeb75c9504 data/pokemon_cards/pokemons/charizard/Charizard[71].png
+fabc8d9bbbd871d853a31708769dda926e691371 data/pokemon_cards/pokemons/charizard/Charizard[72].png
+95f3a1fed33b873eadc32ca3881a03bf1c2ca7ab data/pokemon_cards/pokemons/charizard/Charizard[73].png
+af6f49d0b2970a99aca10fb990941fc999945bf4 data/pokemon_cards/pokemons/charizard/Charizard[74].png
+c9172965f7e4148b837f2e5583913194f6601429 data/pokemon_cards/pokemons/charizard/Charizard[75].png
+66a48613e7e69c2f07109e8aec9fbde1a829e537 data/pokemon_cards/pokemons/charizard/Charizard[76].png
+642eba8da9e744c01dc9525112c42a7ea64e4135 data/pokemon_cards/pokemons/charizard/Charizard[77].png
+06b997a225b667c09b3d175239cb713083c831b5 data/pokemon_cards/pokemons/charizard/Charizard[78].png
+eb3ba54dabadeb305f28a6af545942f94af49a97 data/pokemon_cards/pokemons/charizard/Charizard[79].png
+8e0e1284ca4bfb3d4e3d921cf3061b176c526f16 data/pokemon_cards/pokemons/charizard/Charizard[7].png
+ff811deb419288950fd6e904bf5504374030e322 data/pokemon_cards/pokemons/charizard/Charizard[80].png
+dad963127927439c54912c0372132eeac23dc45e data/pokemon_cards/pokemons/charizard/Charizard[8].png
+14cc2f80c9af03856b1ef594b5bf28e722f21d45 data/pokemon_cards/pokemons/charizard/Charizard[9].png
+f1ac3a0fcaaf0e55e3ac5de4fe817efe20a6f607 data/pokemon_cards/pokemons/eevee
+9f371eb3ed28d0f9c227c19759be47e430e2157a data/pokemon_cards/pokemons/eevee/Eevee[10].png
+b175052da32e260053642bea93a0cd2c43d0ece7 data/pokemon_cards/pokemons/eevee/Eevee[11].png
+44aef433adf8c85cd5f6bb3385e9e1f13ebc2634 data/pokemon_cards/pokemons/eevee/Eevee[12].png
+5111000708e12bf74ceb8cd1274434886dafec03 data/pokemon_cards/pokemons/eevee/Eevee[13].png
+5e45b5e39ef0f24acfb892255381d35a12d5b12b data/pokemon_cards/pokemons/eevee/Eevee[14].png
+32a2a57544b8f5e92b8bcac75e8fd9324f69979f data/pokemon_cards/pokemons/eevee/Eevee[15].png
+5707a73886456a8caf48e9e126c3a4c71458a642 data/pokemon_cards/pokemons/eevee/Eevee[16].png
+805519516cd36ae75ba456a3fbdff6bd5d46e084 data/pokemon_cards/pokemons/eevee/Eevee[17].png
+eedb4284e2f9dfa6d0f90cc60dddc0a3b9498aef data/pokemon_cards/pokemons/eevee/Eevee[18].png
+f1823a9e84102a52e1eef4cc2c758fcf12d5b754 data/pokemon_cards/pokemons/eevee/Eevee[19].png
+2e9168d6c03ae4613d6bc2826d8e0ba1eaabc18e data/pokemon_cards/pokemons/eevee/Eevee[1].png
+707656e66987448fb60f5b8dca3635d5271fcb83 data/pokemon_cards/pokemons/eevee/Eevee[20].png
+716c22e6a8fadc45e7f7146d41d31ad27ad7fcdf data/pokemon_cards/pokemons/eevee/Eevee[21].png
+7d39fd91f66e53b61c62b9399cc3a11162beac6f data/pokemon_cards/pokemons/eevee/Eevee[22].png
+5439823c5f63cc4873eb1a5eb01c670502f1e8a6 data/pokemon_cards/pokemons/eevee/Eevee[23].png
+e0530531fc39a1289ea2800b4edfd0e86aaf22c9 data/pokemon_cards/pokemons/eevee/Eevee[24].png
+ba19959de58786a38d65ffd5311310bc6aad8efe data/pokemon_cards/pokemons/eevee/Eevee[25].png
+822401c775413d3d196dece8a1afa6de586e02b0 data/pokemon_cards/pokemons/eevee/Eevee[26].png
+6ce205472ed1c3fef2067d33436e114277fb710c data/pokemon_cards/pokemons/eevee/Eevee[27].png
+ca847e5591ba55f56d2e5832b231640ccf1c5c4b data/pokemon_cards/pokemons/eevee/Eevee[28].png
+3128cd7b178e154beee959f957784a4d291b4342 data/pokemon_cards/pokemons/eevee/Eevee[29].png
+7faad5f8df374ab81a322283e762f1b122f369e1 data/pokemon_cards/pokemons/eevee/Eevee[30].png
+a6fc96b9968273d7311963bb52ebf10055e7e94c data/pokemon_cards/pokemons/eevee/Eevee[31].png
+7d736b625a105557452bc58bc56d1b7f5d01c2f5 data/pokemon_cards/pokemons/eevee/Eevee[32].png
+9e61394ab0974bca205fa40d1bec0f17d45af3d3 data/pokemon_cards/pokemons/eevee/Eevee[33].png
+41bae94332d1db25dd7a72e9dc54e9cd57807d2c data/pokemon_cards/pokemons/eevee/Eevee[34].png
+c618e930594820d19aa9067dfb30588507d67b3b data/pokemon_cards/pokemons/eevee/Eevee[35].png
+412566db9b610c276f557d38ca0de7d778f04021 data/pokemon_cards/pokemons/eevee/Eevee[36].png
+5b826deb5ee964a50af553b17df86f9bf231ac97 data/pokemon_cards/pokemons/eevee/Eevee[37].png
+3daa18452e04ddbe225d109cb7fe9865e15e1fdb data/pokemon_cards/pokemons/eevee/Eevee[38].png
+529444bd078af4ab6f8a9a89c631b3e80ca34954 data/pokemon_cards/pokemons/eevee/Eevee[39].png
+70756fbff316e0dfeb85f1aa72bc5464b1ea0ceb data/pokemon_cards/pokemons/eevee/Eevee[40].png
+736bd85c4b620f9af8a6677f1ff8d78a532a7941 data/pokemon_cards/pokemons/eevee/Eevee[41].png
+07fcfd73cceeee0ebbc987b68bed957e58a472a0 data/pokemon_cards/pokemons/eevee/Eevee[42].png
+653ce7bde76e9accaf3b7f9f953ed8f4b01e109b data/pokemon_cards/pokemons/eevee/Eevee[43].png
+65388562e43277c6dc273a29f9b505e4ca6481e5 data/pokemon_cards/pokemons/eevee/Eevee[44].png
+971e73f823b01e60c769ad905ad16e49271b2f0d data/pokemon_cards/pokemons/eevee/Eevee[46].png
+183cda5227fd89fcb5cd65f6ef78bb49bc16358e data/pokemon_cards/pokemons/eevee/Eevee[47].png
+908da38cc45bea29adcac52ab62feeb5506f07ba data/pokemon_cards/pokemons/eevee/Eevee[48].png
+9785827bfc021e32bbe49d6637a4fe47e211dd97 data/pokemon_cards/pokemons/eevee/Eevee[49].png
+740fb821566f5ff3396aac3cbcd170966eb907d9 data/pokemon_cards/pokemons/eevee/Eevee[50].png
+01065e0a0cf754a75c4e651aa7a125f29e9fb183 data/pokemon_cards/pokemons/eevee/Eevee[51].png
+1c57016c0e74359929f6ba01713f46efda71e9a5 data/pokemon_cards/pokemons/eevee/Eevee[52].png
+d57251cb3284cd0b615fb09c2dda1e46a3a1f77c data/pokemon_cards/pokemons/eevee/Eevee[53].png
+4492ccdc4800bfb1da631636eb3d62c84ce9de0f data/pokemon_cards/pokemons/eevee/Eevee[54].png
+a23d1235ae74f493134e98db358d29c5e63daae8 data/pokemon_cards/pokemons/eevee/Eevee[55].png
+8b25af747223afbee31816615f3413f38185ed22 data/pokemon_cards/pokemons/eevee/Eevee[56].png
+ab2151942b39d1108c706307f9f8c657ca19b0bf data/pokemon_cards/pokemons/eevee/Eevee[57].png
+27cfac1206c83856521a091af5e42cea23eda830 data/pokemon_cards/pokemons/eevee/Eevee[58].png
+da6828a18f2fd5f264b890a64e1bc49f0766d091 data/pokemon_cards/pokemons/eevee/Eevee[59].png
+f77bb2ddc4ce40c6adf755faf870fe716615529c data/pokemon_cards/pokemons/eevee/Eevee[60].png
+64fe99299547eb36bb342f31d3796325f6d00483 data/pokemon_cards/pokemons/eevee/Eevee[61].png
+458eb564196de73353efc4ad76b6ed5ef7bc17f7 data/pokemon_cards/pokemons/eevee/Eevee[62].png
+51fd4d52ee196bf67a73b9931702337c1017545c data/pokemon_cards/pokemons/eevee/Eevee[63].png
+99d3f34c0b990a970148bfc61aafb31d962c77c0 data/pokemon_cards/pokemons/eevee/Eevee[64].png
+acb1faef25a35bedbcf8a84cfa80dd1bd99d58b6 data/pokemon_cards/pokemons/eevee/Eevee[65].png
+60b9c447c790acc907dc1b6beda67de4b9d44885 data/pokemon_cards/pokemons/eevee/Eevee[66].png
+822b99515ec33fbeec5e0e0e25b140a21787e0ea data/pokemon_cards/pokemons/eevee/Eevee[67].png
+18abfb2463070096cb765964bd96d3e402ef0c83 data/pokemon_cards/pokemons/eevee/Eevee[69].png
+ef59ae15a209ccbf6f605d959c1e0751d59c1290 data/pokemon_cards/pokemons/eevee/Eevee[6].png
+e24acd71fa3e9d60c1fc4ba66d0840a0e0c6fbf2 data/pokemon_cards/pokemons/eevee/Eevee[70].png
+b4dbcd4ef3d9f88e887fddf5d6d83a4611bf0ced data/pokemon_cards/pokemons/eevee/Eevee[71].png
+9cca868189e8e2c606e13c02e8a4a1269df1fbc5 data/pokemon_cards/pokemons/eevee/Eevee[72].png
+9a9cc4a07da7f011a0afe33750b1c67c8dcfd7f3 data/pokemon_cards/pokemons/eevee/Eevee[73].png
+4aa4098270eb380f3f39c7bb9eb7e1a2091a21ef data/pokemon_cards/pokemons/eevee/Eevee[74].png
+fdaf891ecc4987a24fcda274613cc90f206acf93 data/pokemon_cards/pokemons/eevee/Eevee[75].png
+f6c34bdaf5bf13af48983e9d6a108368ed654cb0 data/pokemon_cards/pokemons/eevee/Eevee[76].png
+2b2bcaa4981f3e41abc3e0417f19d1ad283ed69f data/pokemon_cards/pokemons/eevee/Eevee[77].png
+771a1afda418a9a068296057a342a2624e3a4d1a data/pokemon_cards/pokemons/eevee/Eevee[78].png
+3b1bde6baddeaf590555d7ce682b3fc9c0aa379b data/pokemon_cards/pokemons/eevee/Eevee[79].png
+6dffd0e24022e30642bb35032d79b7be02b338f0 data/pokemon_cards/pokemons/eevee/Eevee[80].png
+63e087370e95f358f97a944604566ea13bec8a6b data/pokemon_cards/pokemons/eevee/Eevee[85].png
+a843a3c8304fd30885c2111117fe349115e19c6a data/pokemon_cards/pokemons/eevee/Eevee[86].png
+ec1a154d2136f30de28d1b44d85cc1ef1d7248ac data/pokemon_cards/pokemons/eevee/Eevee[87].png
+3bbe6eae7493bf9e8111d740673b332cd366bf10 data/pokemon_cards/pokemons/eevee/Eevee[88].png
+85247191dbcaea28ecca828011960f285a580265 data/pokemon_cards/pokemons/eevee/Eevee[89].png
+48d511bfa6852a4edef07a2c732c8d791bdf2fb2 data/pokemon_cards/pokemons/eevee/Eevee[8].png
+2ad662c86b4d52c53842e78fee93e24cd33175e5 data/pokemon_cards/pokemons/eevee/Eevee[90].png
+2fc3822241235bb5c0353ff2f056783afa942623 data/pokemon_cards/pokemons/eevee/Eevee[91].png
+059719193f94d245ceb92d6fd4bbc766cb890434 data/pokemon_cards/pokemons/eevee/Eevee[92].png
+39fa07586d200d16f8fc692a5ea4bbd6ea7bf998 data/pokemon_cards/pokemons/eevee/Eevee[93].png
+dbc98a3e8b1c514ac0176fc5bb42be8726f0a220 data/pokemon_cards/pokemons/eevee/Eevee[94].png
+19672bad6c435c78956e837d58a0a1f17d23a9a8 data/pokemon_cards/pokemons/eevee/Eevee[95].png
+89442feee19df752dc72bacba3bf8ec6fd5f2d0d data/pokemon_cards/pokemons/eevee/Eevee[9].png
+3a89678916c073bb7f2c842dfdeefe1a213efb58 data/pokemon_cards/pokemons/lucario
+bb4aa68be867ef8726c157c622bb50597b49ba69 data/pokemon_cards/pokemons/lucario/Lucario[0].png
+fcdcb0bf03dc6400f6ec478d01160623174cfdb0 data/pokemon_cards/pokemons/lucario/Lucario[10].png
+2bfccfe5d398ee7e5b1511ffa4a441f27443cfe5 data/pokemon_cards/pokemons/lucario/Lucario[11].png
+3035cfcf8029f7fe810301647454fb94562f8e48 data/pokemon_cards/pokemons/lucario/Lucario[12].png
+bbd7f8e157fa91fff527719e5daf01c7c69924dd data/pokemon_cards/pokemons/lucario/Lucario[13].png
+bd0144fe08f884b0a88e6e66dac3df60ef66ecf0 data/pokemon_cards/pokemons/lucario/Lucario[14].png
+0eba81063c8eb58df8e1551076f126fc8980d52d data/pokemon_cards/pokemons/lucario/Lucario[15].png
+121625eec245b1445accc51985df0e68ee679c4c data/pokemon_cards/pokemons/lucario/Lucario[16].png
+2ed5188ae6304c0cf49ac0daaa79c57e5173eb18 data/pokemon_cards/pokemons/lucario/Lucario[17].png
+b6e1165e99a947bb93a487f860095bb601e60d50 data/pokemon_cards/pokemons/lucario/Lucario[18].png
+4896d16c018ccdb6662252f96e6d9a6b8c4af9e6 data/pokemon_cards/pokemons/lucario/Lucario[19].png
+4cb281543da33a724808590874a2c7c7659d19ae data/pokemon_cards/pokemons/lucario/Lucario[1].png
+11451b05f344af9b5d2e810111ed6af098daa15d data/pokemon_cards/pokemons/lucario/Lucario[20].png
+caf5e99768a767ba03905293d8b17217990c8fc5 data/pokemon_cards/pokemons/lucario/Lucario[21].png
+d9f926944670ee41bbeedda3140271d711f59786 data/pokemon_cards/pokemons/lucario/Lucario[22].png
+7ad0eb3a7d001a10507a7d004219a8c67739e6ac data/pokemon_cards/pokemons/lucario/Lucario[23].png
+ca055ef8ddf13483edad47a3c025b42c421a604f data/pokemon_cards/pokemons/lucario/Lucario[24].png
+d6b98f85833c522f9640d957f417f53b599c7a54 data/pokemon_cards/pokemons/lucario/Lucario[25].png
+0262706938a323a424c1a6ec8c1ee0354e573490 data/pokemon_cards/pokemons/lucario/Lucario[26].png
+312584337093dbd3349f098205a5d02b7c24997e data/pokemon_cards/pokemons/lucario/Lucario[27].png
+8c9062c94f34cc41ecdb24262641d30f09cc1348 data/pokemon_cards/pokemons/lucario/Lucario[28].png
+740f849e71eeba6edcffb829342b0a076c8ef6fc data/pokemon_cards/pokemons/lucario/Lucario[29].png
+906bdb4f05738b8d2b69e4cb8c8d65e056edaf8b data/pokemon_cards/pokemons/lucario/Lucario[30].png
+bec21f95be5a094b9d385bbd3c80f664213badf9 data/pokemon_cards/pokemons/lucario/Lucario[31].png
+7d55d9450e4ccc63f165c2b7269154f009fba53f data/pokemon_cards/pokemons/lucario/Lucario[32].png
+4dabc1e1a5d8b74938785293708a6e5bad41dc38 data/pokemon_cards/pokemons/lucario/Lucario[34].png
+91342bd42ae9a123653eef39f51708278b38fe48 data/pokemon_cards/pokemons/lucario/Lucario[35].png
+c1ce92a010ca5e7e580d036c60c80130f86b83de data/pokemon_cards/pokemons/lucario/Lucario[36].png
+a0cfbd462bc955a211b4f59be889a5ba1eea69e5 data/pokemon_cards/pokemons/lucario/Lucario[37].png
+fadb68dcf0ee7dea37de27a65bf784e9956035dd data/pokemon_cards/pokemons/lucario/Lucario[38].png
+fce7fef48da62d92869411d5b33d54e1e16a2a77 data/pokemon_cards/pokemons/lucario/Lucario[39].png
+9e873a64507dcbbf013efdd36149ed7f2485bdce data/pokemon_cards/pokemons/lucario/Lucario[3].png
+9a4a565153c30273b58d2ae806b20589297939e6 data/pokemon_cards/pokemons/lucario/Lucario[40].png
+c062daa88f6769f75579c00c58a69822cbf033b9 data/pokemon_cards/pokemons/lucario/Lucario[41].png
+0d5cea5db59a25a1c4834c093926859b33daca29 data/pokemon_cards/pokemons/lucario/Lucario[42].png
+f79208a4dbbfcbf61d7e08ceadf5a56c888bb5fc data/pokemon_cards/pokemons/lucario/Lucario[43].png
+793afea6e78fa4a5fe74448fddea66eb142acea9 data/pokemon_cards/pokemons/lucario/Lucario[44].png
+a18759868e458ee69afc0522721f781411b6a640 data/pokemon_cards/pokemons/lucario/Lucario[45].png
+20d14e59cfc00b3e6f95fd1a2922ab060690b4e7 data/pokemon_cards/pokemons/lucario/Lucario[46].png
+8b609103f0dbdb76af07143423aa87f86c67e1fa data/pokemon_cards/pokemons/lucario/Lucario[47].png
+9916f1378e1f485b931738b5b8247dd23e6bbc20 data/pokemon_cards/pokemons/lucario/Lucario[48].png
+2b0d41f87c6ca79206bf997e144b463085c0d23a data/pokemon_cards/pokemons/lucario/Lucario[49].png
+10929120b6405beca93a44b9b5998608a23b6139 data/pokemon_cards/pokemons/lucario/Lucario[4].png
+5912effa7fed806080acfa4b19b2a64b00311f3a data/pokemon_cards/pokemons/lucario/Lucario[5].png
+664a22cc59d2b75c3030c04369ff80f2d11eb2b5 data/pokemon_cards/pokemons/lucario/Lucario[6].png
+d98e2658b73e7692e58bb196aca44b63abe0944c data/pokemon_cards/pokemons/lucario/Lucario[7].png
+4f6c3b74fbb7c9d85719a4d27ace0b6ee3f81e9b data/pokemon_cards/pokemons/lucario/Lucario[8].png
+587c2a917bab3e69454b7c41b18923e48458515d data/pokemon_cards/pokemons/lucario/Lucario[9].png
+dd8adb73e5cd99e20aa694091e800deaf2a0116c data/pokemon_cards/pokemons/meowth
+f47eee0d2625f384074da05eb18ba665a5041b72 data/pokemon_cards/pokemons/meowth/Meowth[10].png
+957e6ebf636b1e087db4defe46f3b22aa113c22c data/pokemon_cards/pokemons/meowth/Meowth[11].png
+37647eeeaf6252c735e0130570e4b4b78a81ff93 data/pokemon_cards/pokemons/meowth/Meowth[12].png
+50b9c901f92c2aa5491b663fee03e69b36c83928 data/pokemon_cards/pokemons/meowth/Meowth[13].png
+49d97ff9d4245f3625823cd24ca4f13b216aa426 data/pokemon_cards/pokemons/meowth/Meowth[14].png
+942a0edbc273137be94fdff516ae58a9b152d956 data/pokemon_cards/pokemons/meowth/Meowth[15].png
+d39fc9fd0ae9495d4a2214a1560d65f31e117b5c data/pokemon_cards/pokemons/meowth/Meowth[16].png
+5d72a5a5f6bcde698748c5d7007b3295668f5527 data/pokemon_cards/pokemons/meowth/Meowth[17].png
+513d36d7fd5b4dcd6189c81525e0ebeb6ced767d data/pokemon_cards/pokemons/meowth/Meowth[18].png
+3371044f0cde27cf5ed28434fdc8a6ab964b3ae6 data/pokemon_cards/pokemons/meowth/Meowth[19].png
+a75ac440120ba1d210a8ace376ef27150f7ec902 data/pokemon_cards/pokemons/meowth/Meowth[1].png
+8eeaa7acf1deb19497802bf005bad5dc69bb137b data/pokemon_cards/pokemons/meowth/Meowth[20].png
+b0fbc1265f13cbaf75afb83c7e6632b822816c1f data/pokemon_cards/pokemons/meowth/Meowth[21].png
+fa89d97c24940eeecaa9be6c008a290918ff459c data/pokemon_cards/pokemons/meowth/Meowth[22].png
+f691c3c2d74f9785b313ba5734ac562cf14ca3c7 data/pokemon_cards/pokemons/meowth/Meowth[23].png
+8c2d75b1cca59932d0f06e611af547c70a173ec1 data/pokemon_cards/pokemons/meowth/Meowth[24].png
+e4d969f075a3f445b6f624008e9d54a9e3ddd494 data/pokemon_cards/pokemons/meowth/Meowth[25].png
+378242d9c01870a9bbe71e3ee84e4685794e007a data/pokemon_cards/pokemons/meowth/Meowth[26].png
+d996dd3dbc5533eb1c5ff1699c06391ccc78f1fd data/pokemon_cards/pokemons/meowth/Meowth[27].png
+3c3e6910833902eb4f720ecae96f226f0040bad2 data/pokemon_cards/pokemons/meowth/Meowth[28].png
+7fb17b2b1e522924f3012956a156eb630007dceb data/pokemon_cards/pokemons/meowth/Meowth[29].png
+4328d4a2ee3e934f4cdb402a60b1ed029b07847f data/pokemon_cards/pokemons/meowth/Meowth[30].png
+644c30298921d2f153761faf75a8404aa06c4249 data/pokemon_cards/pokemons/meowth/Meowth[31].png
+11b5eaca368dd93185c046fa8ca51752a9e08480 data/pokemon_cards/pokemons/meowth/Meowth[32].png
+49d44ab46a669de23825ec0a9de59f555e8a38bc data/pokemon_cards/pokemons/meowth/Meowth[33].png
+a52ed99910dbc1eec348972b7f261732b9b26ccf data/pokemon_cards/pokemons/meowth/Meowth[34].png
+58374a2aec6f143a1a867689f60a00e2d178e6f0 data/pokemon_cards/pokemons/meowth/Meowth[35].png
+8501f5d28d560b72a12d664ad027b16531951060 data/pokemon_cards/pokemons/meowth/Meowth[36].png
+748898d769a925678ec2f658d2f41e808e908ce9 data/pokemon_cards/pokemons/meowth/Meowth[37].png
+bfba7c30262081317cff9a9aa9389bf6fbe33390 data/pokemon_cards/pokemons/meowth/Meowth[38].png
+9d86c666c2d07dde7b367c0f4af2f62a5c9e0036 data/pokemon_cards/pokemons/meowth/Meowth[39].png
+3dd4e27a8f925da4ce7913716895e3b9643cc19a data/pokemon_cards/pokemons/meowth/Meowth[3].png
+a4f98d234d51927d867c94f29d00456d1aee7e66 data/pokemon_cards/pokemons/meowth/Meowth[40].png
+5cafb0f8215e5d0b7fc67b76c21059aa272f11f9 data/pokemon_cards/pokemons/meowth/Meowth[4].png
+8f6a30eb4e1fabbc04417f449d378b5557c8f337 data/pokemon_cards/pokemons/meowth/Meowth[5].png
+63a65dc209aa0fcfff64d18574a69d73cbd6f38a data/pokemon_cards/pokemons/meowth/Meowth[6].png
+1fdb23c5771095bef1b0b8b0c9e494d950584d80 data/pokemon_cards/pokemons/meowth/Meowth[7].png
+e267e9e911268507c0b01568cbb2df7c8f0d7b05 data/pokemon_cards/pokemons/meowth/Meowth[8].png
+4158b27c2a3731e38ed6942d031b46c01f669f10 data/pokemon_cards/pokemons/meowth/Meowth[9].png
+90c8dd8bac830ae4bb13df89cc661ecc2b5de859 data/pokemon_cards/pokemons/mewtwo
+540213327dd497716c20eed7ab59242cebba12a9 data/pokemon_cards/pokemons/mewtwo/Mewtwo[0].png
+229262e4542ca58a13f307fcd72a7ed84ba57362 data/pokemon_cards/pokemons/mewtwo/Mewtwo[10].png
+bcffce88a94dbbe20b1e1ece2b095aa649e8fac1 data/pokemon_cards/pokemons/mewtwo/Mewtwo[11].png
+71bd86d6496721f44b14351ba4609d1143aeacd0 data/pokemon_cards/pokemons/mewtwo/Mewtwo[12].png
+321af2c05525498a657e99d671f811353613b859 data/pokemon_cards/pokemons/mewtwo/Mewtwo[13].png
+583a49fe4ab4a108f71c4a2c79e818f9ccecb696 data/pokemon_cards/pokemons/mewtwo/Mewtwo[14].png
+1c9c20dce5227fe7735bfbaaf141174a3d8f10ab data/pokemon_cards/pokemons/mewtwo/Mewtwo[16].png
+e1339a60d1c6e10011a1db8c1b055352b1840e5f data/pokemon_cards/pokemons/mewtwo/Mewtwo[17].png
+36589ba77676fc9c9f06a26b83bf4fd8b74944fe data/pokemon_cards/pokemons/mewtwo/Mewtwo[18].png
+a0da8ea4f0510697f2c8b06bbe8e6a2d21cac336 data/pokemon_cards/pokemons/mewtwo/Mewtwo[19].png
+2efccbc6665d4d192d4037c95bcbe03d52810469 data/pokemon_cards/pokemons/mewtwo/Mewtwo[1].png
+4c9ebca6cf3424985b83c31427b262aa9640110f data/pokemon_cards/pokemons/mewtwo/Mewtwo[20].png
+777b75dfe8681c3a80172c9b13bab42d0d1a3dd1 data/pokemon_cards/pokemons/mewtwo/Mewtwo[22].png
+b149750145781809dad6ab0a41d750d3d95a7e1c data/pokemon_cards/pokemons/mewtwo/Mewtwo[23].png
+7453b1e4cd219019addad157ab15b44ad6a8387c data/pokemon_cards/pokemons/mewtwo/Mewtwo[24].png
+fbdbc1dab9ae15cf87af66a81908602db2115c8e data/pokemon_cards/pokemons/mewtwo/Mewtwo[25].png
+cff5cd003e46d6deaa3455b80445d54efe78dd7a data/pokemon_cards/pokemons/mewtwo/Mewtwo[26].png
+6dfc7d4a38aa408c8c7aa614be715f3d1e4f58ac data/pokemon_cards/pokemons/mewtwo/Mewtwo[27].png
+503327a3624eb6fdb1ce6567cb434ecc59707ced data/pokemon_cards/pokemons/mewtwo/Mewtwo[28].png
+d6f869b411a2470327578df76f3a21ba72e60a36 data/pokemon_cards/pokemons/mewtwo/Mewtwo[29].png
+d2335d3d223795fadd4e90af0680a280a0f3b2ae data/pokemon_cards/pokemons/mewtwo/Mewtwo[2].png
+dfac51b3a95f96c7ecf474748dfed94da12e79a1 data/pokemon_cards/pokemons/mewtwo/Mewtwo[31].png
+9815e402add611f76c48fad02b734f16d4898781 data/pokemon_cards/pokemons/mewtwo/Mewtwo[34].png
+1acd734b1c5ad79b4b752d2e072fe14350136bb9 data/pokemon_cards/pokemons/mewtwo/Mewtwo[35].png
+d9d004bca7afe4ba85c1df1026dcbdda9b0bf769 data/pokemon_cards/pokemons/mewtwo/Mewtwo[36].png
+d3c1527920c7c0be683bee840e6372e155eaa50c data/pokemon_cards/pokemons/mewtwo/Mewtwo[37].png
+4d3f6810c755a863e00993c331e99de1a8aa869a data/pokemon_cards/pokemons/mewtwo/Mewtwo[38].png
+8cfd4c0e258c16c3bf36cb16496e1f37234d5cd2 data/pokemon_cards/pokemons/mewtwo/Mewtwo[39].png
+81bfafba3e385289cbcfc4456266d2cca61b454b data/pokemon_cards/pokemons/mewtwo/Mewtwo[3].png
+1c691864cb40da10bf1fab5044a21ddab1120d34 data/pokemon_cards/pokemons/mewtwo/Mewtwo[40].png
+f094295607112c9e954f2692a297c736894f8462 data/pokemon_cards/pokemons/mewtwo/Mewtwo[41].png
+b7317758f1448e76542bd567b6e8efe3a224384c data/pokemon_cards/pokemons/mewtwo/Mewtwo[42].png
+8ae32ef7215f6ed0b2654160b524c0d648922fce data/pokemon_cards/pokemons/mewtwo/Mewtwo[43].png
+2de86c6750ab8ef7bbd7c6d0481548f8b82b35e6 data/pokemon_cards/pokemons/mewtwo/Mewtwo[44].png
+312d9854ef695ce450628e47c57b9735393239b0 data/pokemon_cards/pokemons/mewtwo/Mewtwo[45].png
+080f5ea66d047795685d7d830c8c82487d9fecb8 data/pokemon_cards/pokemons/mewtwo/Mewtwo[46].png
+bbd331b2f27b18ab841617ceb869b19b8b2ea814 data/pokemon_cards/pokemons/mewtwo/Mewtwo[47].png
+54d33b7024ffa205a96422c76768ce7663d14a82 data/pokemon_cards/pokemons/mewtwo/Mewtwo[48].png
+2b0c5dd00ace5119f5ccb2ac6f8c3ece07013417 data/pokemon_cards/pokemons/mewtwo/Mewtwo[49].png
+c8a835173298dc4c44fcc51fd3cb5bdab985a6e4 data/pokemon_cards/pokemons/mewtwo/Mewtwo[4].png
+1b074b480cff8ead2be8d8ca13b426f7961bb1d3 data/pokemon_cards/pokemons/mewtwo/Mewtwo[50].png
+ce7f7f83e4840dc439ecd2e48140e884b0a59263 data/pokemon_cards/pokemons/mewtwo/Mewtwo[52].png
+dd26cf7dbd5199ba51d250ad53ef2b5c1e0db7b7 data/pokemon_cards/pokemons/mewtwo/Mewtwo[53].png
+88109941787e0b36da657c3c6366b049b189d8b2 data/pokemon_cards/pokemons/mewtwo/Mewtwo[54].png
+6a1adafa72890290337760277e6f7d3d2f536c0c data/pokemon_cards/pokemons/mewtwo/Mewtwo[55].png
+61bc7bfd2e2d5d24c31f19b50085ddb5c8d80772 data/pokemon_cards/pokemons/mewtwo/Mewtwo[56].png
+cad51644c094a08bf1b6d527fb8ed46729d1af93 data/pokemon_cards/pokemons/mewtwo/Mewtwo[57].png
+33554b2920de458a696f872f618b4c8556ef8cfc data/pokemon_cards/pokemons/mewtwo/Mewtwo[58].png
+512ba70cf6eb3358c363050beedf6f54be8c4b4d data/pokemon_cards/pokemons/mewtwo/Mewtwo[59].png
+79e90eedc1931964d6626684b93bc2689e86c43f data/pokemon_cards/pokemons/mewtwo/Mewtwo[5].png
+6b1979bd5c831b8c31e43591e7715d606442b242 data/pokemon_cards/pokemons/mewtwo/Mewtwo[6].png
+94b902dd2dd6f5710d920fec2a343ccd826108fa data/pokemon_cards/pokemons/mewtwo/Mewtwo[7].png
+a4997d4c4361abbe8ffe5d4ee06b1d2003c17876 data/pokemon_cards/pokemons/mewtwo/Mewtwo[8].png
+b1b4716f48bc9a107650f954370956a3f8b5456f data/pokemon_cards/pokemons/mewtwo/Mewtwo[9].png
+b5a495996367297bf3ce2c55fa9c6d87a77610a9 data/pokemon_cards/pokemons/pikachu
+77c03b55855f1ee0b810cd823cc84df251d2b010 data/pokemon_cards/pokemons/pikachu/Pikachu[0].png
+528b11304224904b16ec81d1f6b178b1d5574612 data/pokemon_cards/pokemons/pikachu/Pikachu[100].png
+4f46b434f49f5f1d54f05eccb8e8fb44cfaa5e33 data/pokemon_cards/pokemons/pikachu/Pikachu[101].png
+6daf72422f7a9df1ab5d806e8e0401e6443d5a8d data/pokemon_cards/pokemons/pikachu/Pikachu[104].png
+1c7d7d3f0445b7f8ba97dcd8ab6a5cd52397d665 data/pokemon_cards/pokemons/pikachu/Pikachu[106].png
+30fa31339fdf0d1512c6fb8a031a105c3832f2b5 data/pokemon_cards/pokemons/pikachu/Pikachu[107].png
+c6b2ad42ddd861cb85304b8a58d2ca83ddca12f9 data/pokemon_cards/pokemons/pikachu/Pikachu[108].png
+537b3544613655bc1ee7e864738c2cce9921147e data/pokemon_cards/pokemons/pikachu/Pikachu[109].png
+94a8702e127decb011f56b340601766ec1bb2975 data/pokemon_cards/pokemons/pikachu/Pikachu[110].png
+42f49d8ebad1f6a8129a22cebba151a434cf694b data/pokemon_cards/pokemons/pikachu/Pikachu[111].png
+827e6a34265c34f1bef6fac3eb26403f57769367 data/pokemon_cards/pokemons/pikachu/Pikachu[112].png
+a2ddc973516c45bfef6459e9c1291a6580d27c76 data/pokemon_cards/pokemons/pikachu/Pikachu[113].png
+0221f661ebd456f15c54f41c11f277fa73d8a138 data/pokemon_cards/pokemons/pikachu/Pikachu[114].png
+6abcc44e08aec725ed8de0d3efd1678c285b70a7 data/pokemon_cards/pokemons/pikachu/Pikachu[115].png
+1beb67124d2eb3d0e8c39923cd8f704d0f709f42 data/pokemon_cards/pokemons/pikachu/Pikachu[116].png
+5b4518d656659e9f80dda66f385874a08454a2cd data/pokemon_cards/pokemons/pikachu/Pikachu[117].png
+c6ed2728f174b41e3cd1ae1f03378291b9d3275a data/pokemon_cards/pokemons/pikachu/Pikachu[118].png
+166c06e21e40f44c7dab3b76f0764ed4371709dc data/pokemon_cards/pokemons/pikachu/Pikachu[119].png
+9e9dcf5cb2c2505310fe463a84a02fc684cbf488 data/pokemon_cards/pokemons/pikachu/Pikachu[11].png
+685d20dc556cae7af330117825de908ff2d7e770 data/pokemon_cards/pokemons/pikachu/Pikachu[120].png
+222f8c2ee0c530f1207d2bfdad0463fee00cc6e6 data/pokemon_cards/pokemons/pikachu/Pikachu[121].png
+b60ae063aa4ac1650acc20f27c0008700f7fbbed data/pokemon_cards/pokemons/pikachu/Pikachu[122].png
+ad3c2c8d19efa4c59ffb9eaef218878e9ca32ccc data/pokemon_cards/pokemons/pikachu/Pikachu[123].png
+b9119d3fb8c56bd00ac7b130f359429eddd8ed94 data/pokemon_cards/pokemons/pikachu/Pikachu[124].png
+c678f73c433174ac34bd5dd2bb33ca0ac8afcd7a data/pokemon_cards/pokemons/pikachu/Pikachu[126].png
+dbafc9c16d525209571fdc0c8f08cceb1594e115 data/pokemon_cards/pokemons/pikachu/Pikachu[12].png
+22dd75b9e9a2646df0fd8df0c1fe4e1b60257fa4 data/pokemon_cards/pokemons/pikachu/Pikachu[130].png
+81a74c98c02212f3481f5f6f10f0a37a4379396c data/pokemon_cards/pokemons/pikachu/Pikachu[131].png
+7ae168dc01e596e60e97cfff22512c1154eafc0a data/pokemon_cards/pokemons/pikachu/Pikachu[132].png
+290c55bb809c83e5adbdd1e4611b659bf570aff9 data/pokemon_cards/pokemons/pikachu/Pikachu[133].png
+2c59897c020bd3e662ec846b5231b9aa4f7e195d data/pokemon_cards/pokemons/pikachu/Pikachu[134].png
+fcbcb80f64106d64ea42a02826027b50609e2c39 data/pokemon_cards/pokemons/pikachu/Pikachu[135].png
+d5bfb9b2192ec451ab366262ad1f0624ba78f795 data/pokemon_cards/pokemons/pikachu/Pikachu[136].png
+dd4a0dd9a4def05f6cdbf49b0dfc93a5f89c383a data/pokemon_cards/pokemons/pikachu/Pikachu[137].png
+758d4afb550ed7215319d1b3143a2c3d1842b2e7 data/pokemon_cards/pokemons/pikachu/Pikachu[138].png
+7ae93f056d32e27b42319bdae2228ce42870b068 data/pokemon_cards/pokemons/pikachu/Pikachu[139].png
+80c541985128f22252785b54f303e447e3410782 data/pokemon_cards/pokemons/pikachu/Pikachu[13].png
+cefec5c7ffaf75fe8c3ebedae49eede0f42919ac data/pokemon_cards/pokemons/pikachu/Pikachu[140].png
+be94d24ff870d44b0b92c671e9eb496f79adc5c9 data/pokemon_cards/pokemons/pikachu/Pikachu[141].png
+0a8b7f483a12e1493bdc969ff01a8848b2aeacfa data/pokemon_cards/pokemons/pikachu/Pikachu[142].png
+39303700ff38b3cf66e6672ab78000fdbdbb4eff data/pokemon_cards/pokemons/pikachu/Pikachu[143].png
+e6e533873852fbf2897123d95c518033f7a658d5 data/pokemon_cards/pokemons/pikachu/Pikachu[144].png
+c36ac6624c9b7527bf5ef2e4d9a72ecd40056ed4 data/pokemon_cards/pokemons/pikachu/Pikachu[145].png
+134edd63591b38afed7e2003fdcda145b9568f21 data/pokemon_cards/pokemons/pikachu/Pikachu[146].png
+145711c5f4dc67c8aaea41863c82ad7115cd7340 data/pokemon_cards/pokemons/pikachu/Pikachu[147].png
+a3f3df8c9727fe59f5d70fcd3e9a1900eff6ee86 data/pokemon_cards/pokemons/pikachu/Pikachu[148].png
+90fa09b458ee8c306e9bf19a35d14e2b216c19ce data/pokemon_cards/pokemons/pikachu/Pikachu[149].png
+c96cc5380337289a5a4db99189645df664c60753 data/pokemon_cards/pokemons/pikachu/Pikachu[14].png
+63f4afd5e7d41370997b1d41128542720cb17af3 data/pokemon_cards/pokemons/pikachu/Pikachu[150].png
+03bb044e972ea317d9a4044b612dd0fefa9b9968 data/pokemon_cards/pokemons/pikachu/Pikachu[151].png
+e40c2708314028ba28c222ee239ae611b244ea4a data/pokemon_cards/pokemons/pikachu/Pikachu[152].png
+1225998361e8ad93d90968d794027280166301b4 data/pokemon_cards/pokemons/pikachu/Pikachu[153].png
+f07ebaf0cbb46620623cce6e1e634466a496603d data/pokemon_cards/pokemons/pikachu/Pikachu[154].png
+3edacd7def23fc321e4b4c4886a5b9f71d565072 data/pokemon_cards/pokemons/pikachu/Pikachu[15].png
+4bca87a35aa9b4641ede1291ce37e0fa604e477d data/pokemon_cards/pokemons/pikachu/Pikachu[16].png
+cb6dfc454233550e4d2ca18484aafb5b4c3c58df data/pokemon_cards/pokemons/pikachu/Pikachu[18].png
+34f32347f83d2b83f0c58dd2996374ea0e180090 data/pokemon_cards/pokemons/pikachu/Pikachu[19].png
+16b75ce811ff9afa42370d7ecb2eccba0078ee22 data/pokemon_cards/pokemons/pikachu/Pikachu[1].png
+9c345bb25f063e690129ce6d8ea3edb914437a19 data/pokemon_cards/pokemons/pikachu/Pikachu[20].png
+eb6c6236dcaa74bcb5679728256e6c4b2704c30e data/pokemon_cards/pokemons/pikachu/Pikachu[21].png
+a609399ca5bdddfda02ac38ee1fc808b19a82245 data/pokemon_cards/pokemons/pikachu/Pikachu[22].png
+800ec848f1504fe22397c4d8ab5bd68cded963cf data/pokemon_cards/pokemons/pikachu/Pikachu[23].png
+52daea5e9e5cc954054604d4802d66275e1938ac data/pokemon_cards/pokemons/pikachu/Pikachu[24].png
+6530a192e66ca731b269a3782dc227768786bc09 data/pokemon_cards/pokemons/pikachu/Pikachu[25].png
+7a2a587ea4755dc3e5e7486d2ab25e34e30b590a data/pokemon_cards/pokemons/pikachu/Pikachu[26].png
+f52fb23e004f8e3d396d6892d4c75b047471028c data/pokemon_cards/pokemons/pikachu/Pikachu[28].png
+f9efc60a93b831057948042116f110d93f9dd14c data/pokemon_cards/pokemons/pikachu/Pikachu[29].png
+a0b9f8c43c2b8e65c1f15550cd35655180c4088d data/pokemon_cards/pokemons/pikachu/Pikachu[30].png
+7038e22b8c66327133787200636e658d2c04eaae data/pokemon_cards/pokemons/pikachu/Pikachu[31].png
+d31f5bc9f1660c8db97b98fb51bf851d8d92f0b8 data/pokemon_cards/pokemons/pikachu/Pikachu[32].png
+9446cc89643745187771d16529e13b1d39648598 data/pokemon_cards/pokemons/pikachu/Pikachu[33].png
+48fa5c83d4af9e23b19c96d405fcb44a0d77bbed data/pokemon_cards/pokemons/pikachu/Pikachu[34].png
+5f428b6f456114d376829d4628d5ff1915932116 data/pokemon_cards/pokemons/pikachu/Pikachu[35].png
+8a518a9a7f8920b1870d40fe9143b3a1327d0554 data/pokemon_cards/pokemons/pikachu/Pikachu[36].png
+98deadbae4c033cb9a4a7cf3b6978c1cfc70e60a data/pokemon_cards/pokemons/pikachu/Pikachu[38].png
+8fc12cdad54d57c7fc6c99ecca60e80b68e5c3f2 data/pokemon_cards/pokemons/pikachu/Pikachu[3].png
+adf14581a3dd90d198f052bc2d44e6fd8d70a422 data/pokemon_cards/pokemons/pikachu/Pikachu[40].png
+46358ac57e6e9df9a24260fce5b3507df84f3868 data/pokemon_cards/pokemons/pikachu/Pikachu[41].png
+8463dbb27c4112f2f240f5d2f8910bff5769297f data/pokemon_cards/pokemons/pikachu/Pikachu[42].png
+ae7bd53fb520001da4ee15e001971a7b0fb8932a data/pokemon_cards/pokemons/pikachu/Pikachu[43].png
+3ed935a5425aa8198e7970bd6abc441d021936bf data/pokemon_cards/pokemons/pikachu/Pikachu[44].png
+90d14b2d400065316b30d1dace455affff6d610b data/pokemon_cards/pokemons/pikachu/Pikachu[45].png
+fa8833580a6b2be5be4603c8ecab7de500280935 data/pokemon_cards/pokemons/pikachu/Pikachu[46].png
+51141d98827fe5c46014c01ed170c68d5cf67c3a data/pokemon_cards/pokemons/pikachu/Pikachu[47].png
+eddc8a1874270480528db34522e2b380675f76da data/pokemon_cards/pokemons/pikachu/Pikachu[48].png
+ffa219f7cc2344d00db1ca290c1f320b585a046a data/pokemon_cards/pokemons/pikachu/Pikachu[49].png
+498c82afdb18f5c8d0ce6ab44b72bd39e90b0772 data/pokemon_cards/pokemons/pikachu/Pikachu[50].png
+e63df98994ca3fc1ebb18c053d9c104a42e6ddd4 data/pokemon_cards/pokemons/pikachu/Pikachu[51].png
+4f3e1a2070ddad28f836956b4ded881f41fc265b data/pokemon_cards/pokemons/pikachu/Pikachu[52].png
+fea7830db35a8ef33808539c0fc310bf116213ab data/pokemon_cards/pokemons/pikachu/Pikachu[53].png
+2243a96cf53d35310acbf3256b8e0ce2907a4339 data/pokemon_cards/pokemons/pikachu/Pikachu[54].png
+8ebaded9ca4d9b5b5fcd2d3fefbfb2b3afbe8158 data/pokemon_cards/pokemons/pikachu/Pikachu[55].png
+052e2e0ae1676139bb20e8e23f776868f631ed2e data/pokemon_cards/pokemons/pikachu/Pikachu[56].png
+6e3d5c8b37ef287cac21b327b8972d207e51e19b data/pokemon_cards/pokemons/pikachu/Pikachu[57].png
+d5e05ce452f201fa731e1241875404d43d41588e data/pokemon_cards/pokemons/pikachu/Pikachu[58].png
+42b3b66940daef3f721fd52f43a604e50cde7f29 data/pokemon_cards/pokemons/pikachu/Pikachu[59].png
+8912384e3bd8c5e4c8aa59e6252825bf43347a9b data/pokemon_cards/pokemons/pikachu/Pikachu[60].png
+6008f72856315fd9f73bb6d8ee6d198355824a40 data/pokemon_cards/pokemons/pikachu/Pikachu[61].png
+b1896d16dc6fcf77c7aa980af212b5e491f98a35 data/pokemon_cards/pokemons/pikachu/Pikachu[62].png
+4ea76d5b496b196645bfbb07bb33b9706be7635d data/pokemon_cards/pokemons/pikachu/Pikachu[63].png
+f61aa70089edba9a82ee84ae81cb90327793bccf data/pokemon_cards/pokemons/pikachu/Pikachu[64].png
+4d018d1da517e31d89600fcb6d3b288db48e09b8 data/pokemon_cards/pokemons/pikachu/Pikachu[65].png
+f6dfdb684d3e8d964304accfc12fb17ee046580d data/pokemon_cards/pokemons/pikachu/Pikachu[66].png
+ddf073e7ca0f11494e04a0ceaaf9211e35cfbd70 data/pokemon_cards/pokemons/pikachu/Pikachu[67].png
+344f890dafd5ec1c0ad22c1a4436191b4d82e77b data/pokemon_cards/pokemons/pikachu/Pikachu[68].png
+783e3eecc4b538e0951fff6feee9ceb83f68b409 data/pokemon_cards/pokemons/pikachu/Pikachu[69].png
+37acc8d647da4d05467359392ef63383bbab3072 data/pokemon_cards/pokemons/pikachu/Pikachu[70].png
+85c1e3d65b4fa488278716810dc5ec5be8edc1ea data/pokemon_cards/pokemons/pikachu/Pikachu[71].png
+3e31c7045711df5e4e5792850486b1adf8692ca5 data/pokemon_cards/pokemons/pikachu/Pikachu[72].png
+11bdf5cc9a60781efe0cbb2c73f0d5c96c32bd47 data/pokemon_cards/pokemons/pikachu/Pikachu[73].png
+c5a26b479fa4b4d76e47dd0a477a58a3c34363c9 data/pokemon_cards/pokemons/pikachu/Pikachu[74].png
+1642f56e99d04c61f758661951f3d3dc9be17f7b data/pokemon_cards/pokemons/pikachu/Pikachu[75].png
+a715e3cc3e1947d63b0cd4843aafecf2e23959a6 data/pokemon_cards/pokemons/pikachu/Pikachu[76].png
+51d204c5753f18b5c0d478a1e7ea94cd6fa3f682 data/pokemon_cards/pokemons/pikachu/Pikachu[77].png
+ba0df24bcafd88558be9d9535fdfdc343ed462aa data/pokemon_cards/pokemons/pikachu/Pikachu[78].png
+9174b33ab81025d9aca825abf66b8246a0d6564b data/pokemon_cards/pokemons/pikachu/Pikachu[79].png
+5a2442a0653c9ea55f973f6157c650c8a5633c46 data/pokemon_cards/pokemons/pikachu/Pikachu[80].png
+d1529748247ae65814986601c43c190788110223 data/pokemon_cards/pokemons/pikachu/Pikachu[81].png
+9139d5aaf6b5a6317402cc7e0a86466c62f63800 data/pokemon_cards/pokemons/pikachu/Pikachu[82].png
+1198e3447ef29d3f0359a9a582a2ea748c2fa452 data/pokemon_cards/pokemons/pikachu/Pikachu[83].png
+db329a5984ebe36c619e37f9660a6be784275a92 data/pokemon_cards/pokemons/pikachu/Pikachu[84].png
+56d346b264ca139a54611d0a75cae1f96eb986d7 data/pokemon_cards/pokemons/pikachu/Pikachu[85].png
+bb523aaec1e17f558c364f7f01d1a3bdf30ef51a data/pokemon_cards/pokemons/pikachu/Pikachu[86].png
+26c80521e888be58ae08feccb1f02f4168034ff0 data/pokemon_cards/pokemons/pikachu/Pikachu[87].png
+6ef85a2ed1724ad60e2ca0d4394827a115a030d7 data/pokemon_cards/pokemons/pikachu/Pikachu[88].png
+db842868ba961c9768b63a7fa85c09bdd4302c0d data/pokemon_cards/pokemons/pikachu/Pikachu[89].png
+1907a2252e462e9f13ca1af487230e173b358648 data/pokemon_cards/pokemons/pikachu/Pikachu[90].png
+2c98d9e6217cda0ab29ae1ead5ce47242dca6418 data/pokemon_cards/pokemons/pikachu/Pikachu[91].png
+4c1fa8dcf13cd17a002fd53a0c700a3e8fd80824 data/pokemon_cards/pokemons/pikachu/Pikachu[92].png
+c4c6e27999347a9299cb7525fd36d52fe794332a data/pokemon_cards/pokemons/pikachu/Pikachu[93].png
+7e079e4163be4a45728d31920c77015307caa9f9 data/pokemon_cards/pokemons/pikachu/Pikachu[94].png
+72d9a936cfe0e43a0a76cffed58f10e42d41f0b4 data/pokemon_cards/pokemons/pikachu/Pikachu[95].png
+8e5819929d71b0313adeb168836c6df8c3d8c462 data/pokemon_cards/pokemons/pikachu/Pikachu[96].png
+158e73425009ed4e0c1482ff4432696021f21573 data/pokemon_cards/pokemons/pikachu/Pikachu[97].png
+a25339dccd2a8dd0ef13c3395f81e6e7547d65db data/pokemon_cards/pokemons/pikachu/Pikachu[98].png
+a5c69fa2f866a9aaa462d4f9b21db896285d6d0f data/pokemon_cards/pokemons/pikachu/Pikachu[99].png
+f7f088fe4c319572e673a1cfa16dbf8e2dd036cf data/pokemon_cards/pokemons/raichu
+b5625f2bb087b601399e3cf84c9a400fb36b7601 data/pokemon_cards/pokemons/raichu/Raichu[0].png
+721e00ab5d58caf8a1cad4e896a370119de40c13 data/pokemon_cards/pokemons/raichu/Raichu[11].png
+cda7330ec17c807182f43979d55cebbba339abe7 data/pokemon_cards/pokemons/raichu/Raichu[12].png
+362f031a646f907a451b0c96a05fa0e2f922745c data/pokemon_cards/pokemons/raichu/Raichu[13].png
+3f7ea6dae37bf4791661fa5e072f904016a19f9d data/pokemon_cards/pokemons/raichu/Raichu[14].png
+925bc6057e0f52766a3a67ca5f3700e938a24e6a data/pokemon_cards/pokemons/raichu/Raichu[15].png
+046d76cbdcf22fd9978419fb08ff22d9eb3ef30b data/pokemon_cards/pokemons/raichu/Raichu[16].png
+93f4abad948b9a12f9691f74e64fb7f9a33667a4 data/pokemon_cards/pokemons/raichu/Raichu[17].png
+ee3ce70bafce97b48a2880cec0933df38562655d data/pokemon_cards/pokemons/raichu/Raichu[18].png
+6548b8be393ab89570eeecc4ebe942f61e60220a data/pokemon_cards/pokemons/raichu/Raichu[19].png
+69a991bd82224ca22c95218f9098892659d6e83c data/pokemon_cards/pokemons/raichu/Raichu[1].png
+fa020a0f3374c87765376dfe53248d3409e2f4e0 data/pokemon_cards/pokemons/raichu/Raichu[20].png
+f1b3a72a3c5313a0b4411b485d92518c7041d05d data/pokemon_cards/pokemons/raichu/Raichu[21].png
+ff5a46f21d12b4542c002073fc7841c5744af67b data/pokemon_cards/pokemons/raichu/Raichu[22].png
+668d73df14dea1734b49ee9987ccb2e900035d25 data/pokemon_cards/pokemons/raichu/Raichu[24].png
+44e4ac8444bed5f57ff59ddd2b518ba9f1362f8a data/pokemon_cards/pokemons/raichu/Raichu[25].png
+73e62147a052f2d820c0e15d651c39de78c7f635 data/pokemon_cards/pokemons/raichu/Raichu[26].png
+6771d69ecbd7d66ea1c32c23990acce5070ffc2a data/pokemon_cards/pokemons/raichu/Raichu[27].png
+a859df5e2a3a14e9634a143cad5da8a73a085d31 data/pokemon_cards/pokemons/raichu/Raichu[28].png
+4477aa2002cc6d375163047e15f65da971b1f9ff data/pokemon_cards/pokemons/raichu/Raichu[29].png
+dd3695aebbe6722a364234c595bcd183644a5f01 data/pokemon_cards/pokemons/raichu/Raichu[2].png
+d853e34f6354f45ec04a085e7716dda815ed7207 data/pokemon_cards/pokemons/raichu/Raichu[30].png
+1d4cfff1eb33d77bfcb37f8c1091cb4a0a3c9c45 data/pokemon_cards/pokemons/raichu/Raichu[31].png
+40cb92cf71ccbb178c0b4e24efe379eb9865899e data/pokemon_cards/pokemons/raichu/Raichu[32].png
+3f41c384b7fe22a680803dd3c79036ce1e588557 data/pokemon_cards/pokemons/raichu/Raichu[33].png
+2eb1d26187e2f89ca5fe39f8b1b36e47dd9d1c4b data/pokemon_cards/pokemons/raichu/Raichu[34].png
+d87015579651b86cc7f5690debc47165af6422a8 data/pokemon_cards/pokemons/raichu/Raichu[35].png
+d2ca90d4544be0ec03952b0528d3753fcefbec8f data/pokemon_cards/pokemons/raichu/Raichu[36].png
+5e02df1f5be55dd58681581382a559a7fec28c4a data/pokemon_cards/pokemons/raichu/Raichu[37].png
+350330bd8f0441bb09c4fc657fe293e1deb81f23 data/pokemon_cards/pokemons/raichu/Raichu[38].png
+f6740240a21ae6595d0289a83a2ff0255a415425 data/pokemon_cards/pokemons/raichu/Raichu[39].png
+e8847421655c9e8a1465f1973ce799dd2b254a66 data/pokemon_cards/pokemons/raichu/Raichu[3].png
+2ebf93fb4f88921ab1ec32cdebbe952914f91628 data/pokemon_cards/pokemons/raichu/Raichu[40].png
+b166d30fd61ffb2dc7dc6bd3020c1b3a0d1d602b data/pokemon_cards/pokemons/raichu/Raichu[41].png
+6ac639068271a248e147a8abe7128a4c1f9a5ad2 data/pokemon_cards/pokemons/raichu/Raichu[42].png
+55ab73e964498cbc7c10c52666ad076bcdd0edd7 data/pokemon_cards/pokemons/raichu/Raichu[43].png
+42e6981169082c33f55e82795564f60843607ec2 data/pokemon_cards/pokemons/raichu/Raichu[45].png
+afae7f6d6260d20c9536226ac891e07d66c14914 data/pokemon_cards/pokemons/raichu/Raichu[46].png
+b6ef8b016a2763540dde364ebfff92b29a58669f data/pokemon_cards/pokemons/raichu/Raichu[47].png
+245e594933ab09320878626f5ca714d6f8d59ba3 data/pokemon_cards/pokemons/raichu/Raichu[48].png
+bc3a911f8578f6966a70be4aab11c1f3064be51f data/pokemon_cards/pokemons/raichu/Raichu[49].png
+0e68b32982e12f8494c1e49e192d81ee874ecbf8 data/pokemon_cards/pokemons/raichu/Raichu[4].png
+913a1b5a0cc8814253f369133c9c1d5eed59b78b data/pokemon_cards/pokemons/raichu/Raichu[50].png
+c3670be18dc785c0f8bca8e6b9654a34031d8afe data/pokemon_cards/pokemons/raichu/Raichu[51].png
+5bf7af9d34f3a122feb30557e39d2bb4d077259f data/pokemon_cards/pokemons/raichu/Raichu[52].png
+a2260e4ba9da4ff2a7138228a0b27f5cec36d9b7 data/pokemon_cards/pokemons/raichu/Raichu[53].png
+f53b6f5559afba2626c4d7daff12bc966339fe53 data/pokemon_cards/pokemons/raichu/Raichu[54].png
+25af078ab5168a3de8912b8f903558d79ede196c data/pokemon_cards/pokemons/raichu/Raichu[55].png
+27f2f9fb228911e9d347982cbeaa6e01ca7f7a69 data/pokemon_cards/pokemons/raichu/Raichu[57].png
+2aef818943afda9dee01d654c7393eec8b03430d data/pokemon_cards/pokemons/raichu/Raichu[58].png
+4514cc8ab01c0227600460ca345266730d669e0b data/pokemon_cards/pokemons/raichu/Raichu[5].png
+a50e03dc45e1677b0307d8b1257c75b4dea240e8 data/pokemon_cards/pokemons/raichu/Raichu[6].png
+c4008c404b471112b9feca260d1635e9d1b980fe data/pokemon_cards/pokemons/raichu/Raichu[7].png
+dbfd36cfe07b5f660926b1e4d8dbe83e3fdd5f27 data/pokemon_cards/pokemons/raichu/Raichu[8].png
+f1a1a413ab589186100250167d847e90f303bc59 data/pokemon_cards/pokemons/raichu/Raichu[9].png
+e9d79a975d1e3a41a72cf00ff0928f481bf7eb81 data/pokemon_cards/pokemons/snorlax
+6a23fd6bf0c0fa39f1796fe836213c9c03c03faf data/pokemon_cards/pokemons/snorlax/Snorlax[0].png
+30226580022abbe87c0c584d30cfeacba9e5046f data/pokemon_cards/pokemons/snorlax/Snorlax[10].png
+490767aa99640e8cfa8f8c7de06e22307e458603 data/pokemon_cards/pokemons/snorlax/Snorlax[11].png
+60bd5455945f95619a17da265ce2fff51aeab200 data/pokemon_cards/pokemons/snorlax/Snorlax[12].png
+bf98fbb059c91f16b3b39f8c8cb8ca07a8516556 data/pokemon_cards/pokemons/snorlax/Snorlax[13].png
+c085368a5a852dcfc66b310011863b26a41b0819 data/pokemon_cards/pokemons/snorlax/Snorlax[14].png
+9a6c6fecc834104b87d7c0f1abf657cf500063f6 data/pokemon_cards/pokemons/snorlax/Snorlax[15].png
+0a9407fdd75bd4955886d8bb436fa50144d76feb data/pokemon_cards/pokemons/snorlax/Snorlax[16].png
+59408379c7f76e20de489de21e0ec6ee7f7dc684 data/pokemon_cards/pokemons/snorlax/Snorlax[17].png
+7db237b735dffdc04a433a1681e51172b964c79f data/pokemon_cards/pokemons/snorlax/Snorlax[18].png
+d9f85aed1ae1e349688a7cc8565491e1511881f8 data/pokemon_cards/pokemons/snorlax/Snorlax[19].png
+c69f09a13b3d63c645d93387daf5f574935e4e08 data/pokemon_cards/pokemons/snorlax/Snorlax[1].png
+14ff47e3d94fc4acab88fa5d8f6f60bb488ba34e data/pokemon_cards/pokemons/snorlax/Snorlax[20].png
+1af76ee031ce64ae3feb81f2ea919833d6fac028 data/pokemon_cards/pokemons/snorlax/Snorlax[21].png
+7334ce8a0a14a1688c83fb60f31edd81573b30c8 data/pokemon_cards/pokemons/snorlax/Snorlax[22].png
+408c8c15af3a62e57e10438e44462384d833fd5b data/pokemon_cards/pokemons/snorlax/Snorlax[23].png
+2b183ea5fa7403621045463947c52e62a085408d data/pokemon_cards/pokemons/snorlax/Snorlax[24].png
+ed611d48e5b3c81a88c6b78d0a4847d9ae47ef1b data/pokemon_cards/pokemons/snorlax/Snorlax[25].png
+b8e2715ccde1243ecd6c895d4f5e7b18627412f1 data/pokemon_cards/pokemons/snorlax/Snorlax[26].png
+27b97d95e76f7c2cc71664e68373850ecd2f70c9 data/pokemon_cards/pokemons/snorlax/Snorlax[27].png
+79eba4c73b63074d831d8ffffdf287980e987dac data/pokemon_cards/pokemons/snorlax/Snorlax[28].png
+744c67cc1d614fa4873e8d21d45f920d5e820388 data/pokemon_cards/pokemons/snorlax/Snorlax[29].png
+31eda2ac003f7ec4d9f1b67bf52a602d0ee050e6 data/pokemon_cards/pokemons/snorlax/Snorlax[2].png
+488e7a9d84232495c8acd9c99d5674e52b5e0b4d data/pokemon_cards/pokemons/snorlax/Snorlax[30].png
+9229aa34171be193eb4315f43828464d949d8ca3 data/pokemon_cards/pokemons/snorlax/Snorlax[31].png
+919b2ac97deece3c7477936ac583480647eeed25 data/pokemon_cards/pokemons/snorlax/Snorlax[32].png
+b203058bb7fde3bae42d6676aaa200ccd60c08a8 data/pokemon_cards/pokemons/snorlax/Snorlax[33].png
+1b872918f4face387b6939a202cf287d06c4fda3 data/pokemon_cards/pokemons/snorlax/Snorlax[34].png
+441bb2ed167885f00f7e146a759adcf8fbdbf5ee data/pokemon_cards/pokemons/snorlax/Snorlax[35].png
+404d5b866b39e2e6f26b041beba4a9c2d536943b data/pokemon_cards/pokemons/snorlax/Snorlax[36].png
+b62c87023041bdce2a939c075add87a1e3be8fec data/pokemon_cards/pokemons/snorlax/Snorlax[37].png
+0b3ecf01e59b182713695b8b0579c8f37545ba38 data/pokemon_cards/pokemons/snorlax/Snorlax[38].png
+714d9b84e2788c295d69d357fbe5438c6c6a8e41 data/pokemon_cards/pokemons/snorlax/Snorlax[39].png
+6c2560f16d907eb6a38288bc63370c6d568ce6f4 data/pokemon_cards/pokemons/snorlax/Snorlax[3].png
+836749012c7c6f074d130c1f3e773fff63964970 data/pokemon_cards/pokemons/snorlax/Snorlax[40].png
+fd20b1c484f269572096e3156d4c7531187c9e4b data/pokemon_cards/pokemons/snorlax/Snorlax[41].png
+95850ab223a90a0d2bf228358294759344375901 data/pokemon_cards/pokemons/snorlax/Snorlax[42].png
+76d09a5cb0312e49cdeef2033bcf6761ccbcf32f data/pokemon_cards/pokemons/snorlax/Snorlax[43].png
+7e076b09e71aea41d6c902d84ab643e0e16566ca data/pokemon_cards/pokemons/snorlax/Snorlax[44].png
+afdf7550459ba56c75c3f1f5a7cddebd3540d0cf data/pokemon_cards/pokemons/snorlax/Snorlax[45].png
+4918c1ee73920af2a8260a93b1e8830c7314f9de data/pokemon_cards/pokemons/snorlax/Snorlax[46].png
+7ee73aad8bee883dcce1db9b8d0b4ce291b23f6d data/pokemon_cards/pokemons/snorlax/Snorlax[47].png
+52e21dacc8e3ad35dcb6e5348bea6876feab729a data/pokemon_cards/pokemons/snorlax/Snorlax[48].png
+caaf2115edd6c0f59f411996d017766ad11ccf9f data/pokemon_cards/pokemons/snorlax/Snorlax[49].png
+7d3fbe6bb2cd8281d4dee7ab58cd78edc860ad5f data/pokemon_cards/pokemons/snorlax/Snorlax[4].png
+8aba8c4fdf31fdcd2ac33d25a64767b89c9ebe5a data/pokemon_cards/pokemons/snorlax/Snorlax[50].png
+e154229d7b9e59eb9cd4318feed8e77e2f614ff9 data/pokemon_cards/pokemons/snorlax/Snorlax[51].png
+6f160780859c6ed800a4c995366a49dc18135cb1 data/pokemon_cards/pokemons/snorlax/Snorlax[52].png
+d4ce3a56c7298e67be635c8c6a3e9b61002abf3b data/pokemon_cards/pokemons/snorlax/Snorlax[5].png
+eccb56fb1cc060aa89e7569cb2377489de55ebc2 data/pokemon_cards/pokemons/snorlax/Snorlax[6].png
+a0db2426e31eb13b8d353a09e1eaebcb22d85861 data/pokemon_cards/pokemons/snorlax/Snorlax[7].png
+e87b9bf28490074030717f0e98a725730b28f185 data/pokemon_cards/pokemons/snorlax/Snorlax[8].png
+74e440d8e0335e74199232f7eb3f492baa4c2e34 data/pokemon_cards/pokemons/snorlax/Snorlax[9].png
+291c08c3258895bdb7dcf1fb7238a0a3660440f4 data/pokemon_cards/split
+9b2dac1c5cce3cb99de6e9a6c39b77753975e8dc data/pokemon_cards/split/test
+cd629cbbb64630789fc821e83f00c338a68b8503 data/pokemon_cards/split/test/charizard
+b7f36f1cf3a318a7b6d6a6d1a1ebf2bce6f5c4fa data/pokemon_cards/split/test/eevee
+314a9f32f731568b399176d64c865fe43ebe1b76 data/pokemon_cards/split/test/lucario
+2553c82a6a472049f32551d75baa360a49579453 data/pokemon_cards/split/test/meowth
+d4b24979f21ad8ac61f2e79ecf1fd65cd4fcb786 data/pokemon_cards/split/test/mewtwo
+c59ec7e5d366864353cdcbea64ca2c64da9d5139 data/pokemon_cards/split/test/pikachu
+75ca31f1100276fca1643e92bfa8a6ab6450b330 data/pokemon_cards/split/test/raichu
+4149e315b8557d3692564296f262e84a718a5e20 data/pokemon_cards/split/test/snorlax
+9ab9b4ad07c5de108a1e7365f9c4d069bd7e41a7 data/pokemon_cards/split/train
+b75874a83f825d1739a41b8db9ac82cf8539f3cc data/pokemon_cards/split/train/charizard
+3cb997c1956a0323e4df32a021c7798d534cb215 data/pokemon_cards/split/train/eevee
+24dd936fd7794863df6de63aaefb739b23183be0 data/pokemon_cards/split/train/lucario
+67247fd165c199426e2ea57fcfb00de7e493859f data/pokemon_cards/split/train/meowth
+6208aef108e471e72fa962830cf126060bcdbb15 data/pokemon_cards/split/train/mewtwo
+4c50fec40a5356cc6126031c29525aa365eca09c data/pokemon_cards/split/train/pikachu
+7bca05e5ee077835249ea5db65dacfc9bf9b3fe6 data/pokemon_cards/split/train/raichu
+913ad2ace2b15240d7f94aae3d8e24212bda983a data/pokemon_cards/split/train/snorlax
+d827bdeb36ae6a8d5989ab0aa4313ca45a36912f data/pokemon_cards/split/val
+6fdce5def9249e78401df3fc1695bd8cfbf361fc data/pokemon_cards/split/val/charizard
+cf99dc056976d840d3ef6c9ae7cf4f7bbf079542 data/pokemon_cards/split/val/eevee
+71289aa74279615c5cd428909f282b92abe1c482 data/pokemon_cards/split/val/lucario
+4d2cf4ff85aaa866e7563b4b2f0cbc73de37661d data/pokemon_cards/split/val/meowth
+83d82e1aa1ae3c921499b26feddf50041976ed71 data/pokemon_cards/split/val/mewtwo
+cd3596a49f3255ce3abcfdfbf612da32ca3dea1c data/pokemon_cards/split/val/pikachu
+9b678752fceb0fb2c727c2ac3af607967deb4173 data/pokemon_cards/split/val/raichu
+9388b232701bdcb0cadd04385c982aabc8fb69e4 data/pokemon_cards/split/val/snorlax
+d65fac84e148bb409ba7d4edb20744c1cdfe5a7f 
+5f07f6d17c9bda2574a6144ff1fedbdd23437af1 .gitignore
+37dc17e19d482cace9f2d4a5c27be4f648ff381a 
+a6cd83eaa49930b5b70e3409fd9cb77e4bea659f .gitignore.txt
+49dd2c3e7a386c7f855d434e99baa156458a50e6 build_dataset.py
+b07bc44ed1a9c6c133b6ed5e1579ff731b9bad3e train.py
+0d9d0924a06287cb7cdb2d45f5f87ae507c67d8b 
+b4a31630cdf9b3cd64a18ccf7897536031b63d3e README.md
+b88c3465b3739bfbd61ee2a925b7ed98e1089573 
+b128a91228f2f27cd4cf8746f44b918484b3c3d0 README.md
+7fa0fdb4201d7b85c1ad85595f047eb57651e92b 
+d2e213e5ab44d5be17c20b5b30b3dd04f1d666f2 README.md
+9cf87d325dd1eeda23e185e83dc8af47107f0635 
+ac1743d10937e4f0986ca81c6a53cb5faa882e1d README.md
+ca65119d6621604fc920ad2a65255bd28a463e57 
+0bd35442d9761a1be3679ffb06263f505014937b README.md
+65e329748e9f7a99ce7abe270779ea45cc334aa9 
+aff1335fd2b4a46fb580c1e1d62ee828ebc1854a README.md
+1a0596e78132edbfe8fb950b46d03d68a0922e90 
+710305739e6c87bc573846fbdd0e98e10a5c72d5 README.md
+ce495aa9cc4e5bb8d6003e435b0ec49ed4c224c8 
+1f55854d3e275e162712bf13052baa6439fc7a70 README.md
+9904bcdab93e24bc3e202141eaf17335d7fef86a 
+c9a8d2e89511b8b1f2550b02b72727ba4485131a README.md
+204422d253d5a2953196afcc96a4213e8e30a983 
+d836902b7891f81c5e6d2c7cc3019eab80ecd513 README.md
+8d7ac1b596aac59f588733521de67ad27f5f28f0 
+10efab6f3d4e615ea4c5c9d64598fe185296bc10 README.md
+76351ec6c6789e501cda2a734b28b50e4db83bdc 
+d267d7e840787db9f4998a2785aee4f152fa6eb0 
+ff31b437d356d40606d7713f2c29968e1edc882f train.py
+53ebd3f354f5b2882aed6891765c6dde1f3a651e 
+169f726ce56ded647363be8ac0536dcc0ccf16bd train.py
+8d9b31213e3eb267dbbbec8d45d074d1a05bb1f9 
+d842d829a153ae6632bd51768b29a68994c946f6 best_resnet18_pokemon_cards_accuracy.pth
+6578e577e5d0b66fa73b3c164291f90d4a43d935 best_resnet18_pokemon_cards_loss.pth
+26f4a3bcbfc43d15113c72df6488f09e9b942a18 pokemon_classification_model_v3_accuracy.pth
+71027b78ba7435e771256754c8d652f1f9ba5737 pokemon_classification_model_v3_loss.pth
+e5e8bfd8faf3128515eed4a8d2dd483332c11eb7 pokemon_test_profile.nsys-rep
+9a5b5457e7cb07832aed0299995b857e86f1f63e pokemon_train_profile.nsys-rep
+de740af0f701a517e57c144942397f56e04d8aa5 
+d1d6b7f6f3d1dad2ec06f03cf3a4097f882179f4 train.py
+951d417d4454acbed27717949381c3478ed75e15 
+ac0e07e6e1f67efa4bff218e0d8cf6d2ec7e3f92 best_resnet18_pokemon_cards_accuracy.pth
+3fa0c2cc534211fd9f16cd8be781bd85cd2757c4 best_resnet18_pokemon_cards_loss.pth
+3dc74f84edb80212071416c1c39175305bb08bef pokemon_train_profile.nsys-rep
+0c46129a7f3f745cd461f502711c0ab0fb3796ce train.py
+b85b86470f874c9e982fd0ec47cd23595e1cf9e4 
+c4584a740ba380369f723388744b25782c5230c2 
+a863b5ec920d3269caab51dbab81ccbc35b50712 README.md
+b45a1dfe7874e0827cf746ee3a643a0c902907ab 
+f113f003bd70a9a37eb9c40bf2837fec446b22ea 
+37cbed0c1b60ef11be365d73e5967261e8fb9d70 
+2e891eac2f3d8d9c550517e6adf1714dd4eeb6a8 README.md
+8d4ef6be8a883f99dd8fd3ed6bdae9574dab958a 
+739e911b184cf4c1b5ae664deb4c37ba729d3047 
+0c8855a6ca8120ed48c8cb0e38c0d20510d0fa0f build_dataset.py
+9e6d219cece824dd2ef5d31c02ad05e8e9a509ed pokemon_classification_model_v1_94.pth
+b697b40270e2bd1cfa338c7793ea29ca997c0383 pokemon_classification_model_v1_98.pth
+ccb0986259c624684f95a5b1dfb0c894afc63d9e pokemon_classification_model_v2_92.pth
+f88b30df82a322308215c7c9dbb4544abe79af42 pokemon_classifiction_profile.nsys-rep
+a1df1f7f25c5586cda10f662f5d4046d10cd863b pokemon_train_profile.nsys-rep
+d04b0347b63cbf935340a7ed5cb0cf5ffbad82d7 pokemon_train_profile.qdstrm
+a1fee11992b4df061e5523b8a127a625edd1ae98 train.py
+e0d2579870e9c6a8cbbbe1fc4c863468029c66a8 
+c5d3695159cb58e875d377c7711461af3a1a1204 inference.py
+03354414d7f526b5695b851746501fae3e8a7151 train.py
+0ebc4a71f855f968fd70fbbf7d44020018f3fdfd 
+3d1716646dca2e41ee7d3bc9f3031324ae0e0b80 best_resnet18_pokemon_cards.pth
+042d254eb8fe1373044e23456f8de1e58d716cee best_resnet18_pokemon_cards_accuracy.pth
+f2cda9f3acb3fc02da7b1ae931e88dcb17cc3411 test.py
+92a3f9f32bc15f0e8eec34d8f02a71fc2084ad4c 
+0ec7ce92f89a38e0d904744543baf8445acf1ee7 train.py
+d7a309d98f56d217e3a174fdb84e588f7a2cac07 
+e630018c8bd2c4d9c76a16b8f551cceee4269a4f train.py
+a41d0d7516efa1e3e2f01afe1e5e26866d0d4528 
+f6dd20a92fdf2371542b69812f56eb0624d38f96 build_dataset.py
+1638ace0ac789757cb842aa16326086985072d62 test.py
+41e33eaa0e913b00baae5d59fe6081bfe53cc49a train.py
+9679500fc1caeb26cda663af19c8b778e9fadf87 
+e6f920dceb5a06d3a27fbe74ebf8fbf33c8f46fe 
+b0fb75d5f964382a4253e1ae6f6b697020c43c67 
+40b482fb9673eb0961260f5392f233c3f3cef91d data
+c22c5548d6ca8d116b697f25737bab9e3ad935a6 data/pokemon_cards
+0ce7cfd7f2e81654c61e2376bbfe88cec6382b0f train.py
+516b7ff06dda57483333195baba70f5b9dec3616 
+4603cc7a01581874a09af56bba85093fe4186b6b 
+1f05e325d04ee30b7036d8704c5d2161e770e581 data
+b5b122e4f0f5913f0d815f288d888d957952de6d data/pokemon_cards
+d1be7d7bec001e8ea29e792d261c3440319606f5 data/pokemon_cards/split
+603ffab222f090145ff39bb6974cb37adbacb647 data/pokemon_cards/split/test
+501dcdcb317dee25ecb8170534f2eb7c2d051e12 data/pokemon_cards/split/train
+a2b56c12ac02e68e68811bc9d22aa96c6caa592a data/pokemon_cards/split/val
+8db4d53c74c26788d87963f62bbb1e48879801a2 train.py
+35f7608765cd9cff230c2b2491889a8138dcd152 
+9f6cbd6125a440c6edd1336a1645dc4f6583efd2 
+a2034fa9f3578b166dff3aa00822806947c27b25 train.py
+cf09c286e6c1c8ccbd441434b7293545989794d8 
+ea7a54ed184d56a31deca71d448cb72f54b9735b 
+89f0d4ffa1cb1e202be1eeea9b35b8e15686d2c2 furret.jpg
+8357026b9f3bba03dcce334c11a79c8fdb6deb9f train.py
+52e7df4d779ac25b8a0db41c051dd45593dd4e45 
+e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 train.py
+6bd692d4412b661ef446e90b0ed748a9c10c15e3 
