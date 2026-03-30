@@ -1,3 +1,5 @@
+import os
+
 import torch
 from torch import nn, optim
 from torch.utils.data import DataLoader
@@ -71,7 +73,7 @@ def main() -> None:
 
         # Training config
         batch_size = 32
-        num_epochs = 2
+        num_epochs = 1
         learning_rate = 0.001
 
         with torch.cuda.nvtx.range("setup:transforms"):
@@ -95,7 +97,7 @@ def main() -> None:
 
         with torch.cuda.nvtx.range("setup:dataloaders"):
             # Dataloaders
-            train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+            train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=5,pin_memory=True, persistent_workers=True)
             val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
             test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
@@ -127,8 +129,8 @@ def main() -> None:
             with torch.cuda.nvtx.range(f"train:epoch_{epoch + 1}"):
                 for batch_idx, (images, labels) in enumerate(train_loader):
                     with torch.cuda.nvtx.range(f"train:epoch_{epoch + 1}:batch_{batch_idx}"):
-                        images = images.to(device)
-                        labels = labels.to(device)
+                        images = images.to(device, non_blocking=True)
+                        labels = labels.to(device, non_blocking=True)
 
                         with torch.cuda.nvtx.range("train:zero_grad"):
                             optimizer.zero_grad()
@@ -152,6 +154,7 @@ def main() -> None:
             print(f"Train Loss: {train_loss:.4f}")
             print(f"Val Loss: {val_loss:.4f} | Val Acc: {val_acc:.4f}")
 
+            saved = False
             if val_acc > best_val_accuracy:
                 with torch.cuda.nvtx.range("save:best_accuracy"):
                     best_val_accuracy = val_acc
@@ -165,7 +168,7 @@ def main() -> None:
                         "val_loss": val_loss,
                     }, "best_resnet18_pokemon_cards_accuracy.pth")
                     print("Saved best accuracy model")
-                    print_wrong_paths(model, val_loader, device, "best_accuracy")
+                    saved = True
 
             if val_loss < best_val_loss:
                 with torch.cuda.nvtx.range("save:best_loss"):
@@ -180,7 +183,10 @@ def main() -> None:
                         "val_loss": val_loss,
                     }, "best_resnet18_pokemon_cards_loss.pth")
                     print("Saved best loss model")
-                    print_wrong_paths(model, val_loader, device, "best_loss")
+                    saved = True
+
+            if saved:
+                print_wrong_paths(model, val_loader, device, "best")
 
         # Final test evaluation
         test_loss, test_acc = evaluate(model, test_loader, criterion, device, "test")

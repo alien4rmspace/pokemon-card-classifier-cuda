@@ -17,15 +17,18 @@ build/
 dist/
 *.egg-info/
 
+# IDE
+.idea/
+
 # PyTorch model files
 *.pt
 *.pth
 *.ckpt
 
-# Dataset folders
 data/
 data/pokemon_cards/
-datasets/
+data/pokemon_cards/raw/
+data/pokemon_cards/split/
 
 # Training outputs
 outputs/
@@ -36,6 +39,7 @@ logs/
 # Profiling outputs
 *.nsys-rep
 *.qdrep
+*.qdstrm
 *.sqlite
 *.ncu-rep
 
