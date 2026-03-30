@@ -13,7 +13,7 @@ A deep learning image classification project built with PyTorch and accelerated 
 
 ## Motivation
 
-This project was built to explore GPU-accelerated deep learning workflows end-to-end, from dataset ingestion and preprocessing to model training, inference, and performance profiling. It also serves as a practical computer vision project focused on real image data and reproducible experimentation.
+This project was built to learn GPU-accelerated deep learning in a practical, end-to-end setting, covering dataset collection, preprocessing, model training, inference, and evaluation. It was also designed to build experience with profiling tools and performance analysis, with a focus on identifying bottlenecks and understanding how CPU-side input pipelines and GPU execution impact overall training efficiency.
 
 ## Tech Stack
 
@@ -25,23 +25,6 @@ This project was built to explore GPU-accelerated deep learning workflows end-to
 - asyncio
 - aiohttp
 - TCGdex API / SDK
-
-## Project Structure
-
-```text
-data/
-  pokemon_cards/
-    raw/
-    split/
-      train/
-      val/
-      test/
-
-prepare_dataset.py
-train.py
-test.py
-README.md
-```
 
 ## Data Cleaning / Label Normalization
 
