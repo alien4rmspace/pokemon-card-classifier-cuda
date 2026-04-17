@@ -5,8 +5,8 @@ from torchvision import models, transforms, datasets
 
 
 TEST_DIR = "data/pokemon_cards/test"
-MODEL_PATH_1 = "pokemon_classification_model_v3_accuracy.pth"
-MODEL_PATH_2 = "pokemon_classification_model_v3_loss.pth"
+MODEL_PATH_1 = "best_resnet18_pokemon_cards_accuracy.pth"
+MODEL_PATH_2 = "best_resnet18_pokemon_cards_loss.pth"
 BATCH_SIZE = 32
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -37,12 +37,24 @@ def build_test_dataset(test_dir: str) -> datasets.ImageFolder:
         return datasets.ImageFolder(test_dir, transform=eval_transform)
 
 
-def build_loader(dataset: datasets.ImageFolder, batch_size: int) -> DataLoader:
-    return DataLoader(dataset, batch_size=batch_size, shuffle=False)
+def build_loader(
+    dataset: datasets.ImageFolder,
+    batch_size: int,
+    num_workers: int,
+    pin_memory: bool,
+) -> DataLoader:
+    return DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=num_workers,
+        pin_memory=pin_memory,
+        persistent_workers=num_workers > 0,
+    )
 
 
 def evaluate_model(model: nn.Module, loader: DataLoader, device: torch.device, model_name: str) -> float:
-    correct = 0
+    correct = torch.zeros(1, device=device, dtype=torch.int64)
     total = 0
 
     model.eval()
@@ -50,17 +62,18 @@ def evaluate_model(model: nn.Module, loader: DataLoader, device: torch.device, m
         with torch.cuda.nvtx.range(f"evaluate:{model_name}"):
             for batch_idx, (images, labels) in enumerate(loader):
                 with torch.cuda.nvtx.range(f"{model_name}:batch_{batch_idx}"):
-                    images = images.to(device)
-                    labels = labels.to(device)
+                    images = images.to(device, non_blocking=True)
+                    labels = labels.to(device, non_blocking=True)
 
                     with torch.cuda.nvtx.range(f"{model_name}:forward"):
                         outputs = model(images)
                         preds = outputs.argmax(dim=1)
 
-                    correct += (preds == labels).sum().item()
+                    correct += (preds == labels).sum()
                     total += labels.size(0)
 
-    return correct / total if total > 0 else 0.0
+    return (correct.float() / total).item() if total > 0 else 0.0
+
 
 
 def print_sample_predictions(
@@ -80,15 +93,15 @@ def print_sample_predictions(
     with torch.no_grad():
         with torch.cuda.nvtx.range("print_sample_predictions"):
             for images, labels in loader:
-                images = images.to(device)
+                images = images.to(device, non_blocking=True)
 
                 with torch.cuda.nvtx.range("sample:model_1_forward"):
                     outputs_1 = model_1(images)
-                    preds_1 = outputs_1.argmax(dim=1)
+                    preds_1 = outputs_1.argmax(dim=1).cpu()
 
                 with torch.cuda.nvtx.range("sample:model_2_forward"):
                     outputs_2 = model_2(images)
-                    preds_2 = outputs_2.argmax(dim=1)
+                    preds_2 = outputs_2.argmax(dim=1).cpu()
 
                 for i in range(len(labels)):
                     image_path = dataset.samples[sample_offset + i][0]
@@ -126,9 +139,17 @@ def validate_class_mapping(
 
 
 def main() -> None:
+    num_workers = 3
+    print_samples = False
+
     with torch.cuda.nvtx.range("main"):
         test_dataset = build_test_dataset(TEST_DIR)
-        test_loader = build_loader(test_dataset, BATCH_SIZE)
+        test_loader = build_loader(
+            test_dataset,
+            BATCH_SIZE,
+            num_workers=num_workers,
+            pin_memory=device.type == "cuda",
+        )
 
         print("Number of classes:", len(test_dataset.classes))
         print("Number of test images:", len(test_dataset))
@@ -150,16 +171,18 @@ def main() -> None:
         print(f"Model 1 Test Accuracy: {acc_1:.4f}")
         print(f"Model 2 Test Accuracy: {acc_2:.4f}")
 
-        print("\nSample predictions from first test batch:")
-        print_sample_predictions(
-            model_1,
-            model_2,
-            test_loader,
-            test_dataset,
-            test_dataset.classes,
-            class_names_1,
-            device,
-        )
+        if print_samples:
+            print("\nSample predictions:")
+            print_sample_predictions(
+                model_1,
+                model_2,
+                test_loader,
+                test_dataset,
+                test_dataset.classes,
+                class_names_1,
+                device,
+            )
+
 
 
 if __name__ == "__main__":
