@@ -73,7 +73,7 @@ def main() -> None:
 
         # Training config
         batch_size = 32
-        num_epochs = 1
+        num_epochs = 5
         learning_rate = 0.001
 
         with torch.cuda.nvtx.range("setup:transforms"):
@@ -97,9 +97,9 @@ def main() -> None:
 
         with torch.cuda.nvtx.range("setup:dataloaders"):
             # Dataloaders
-            train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=5,pin_memory=True, persistent_workers=True)
-            val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
-            test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+            train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=5,pin_memory=True, persistent_workers=True, prefetch_factor=4)
+            val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=3,pin_memory=True, persistent_workers=True)
+            test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=3,pin_memory=True, persistent_workers=True)
 
         # Class info
         class_names = train_dataset.classes
