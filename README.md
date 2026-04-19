@@ -63,19 +63,29 @@ Figure 4. Nsight Systems timeline after increasing the training DataLoader worke
 Figure 5. Nsight Systems timeline for a two-epoch training run with the training DataLoader worker count set to 4 and the validation and test DataLoader worker counts set to 2. Compared with profiling a single epoch, this run better reflects realistic training behavior by showing that the worker startup overhead is concentrated at the beginning of the first epoch, while subsequent epochs benefit from the established data loading pipeline and incur much less initialization cost.
 Note: The blue blocked state regions suggest that the validation and test phases still spend time waiting, indicating there may be room to increase worker counts further for evaluation.
 
+---
+<img width="1340" height="437" alt="Screenshot 2026-04-15 173103" src="https://github.com/user-attachments/assets/5ab77633-e184-4a32-beb4-0dd23d02f9fc" />
+<img width="1187" height="433" alt="Screenshot 2026-04-15 173552" src="https://github.com/user-attachments/assets/ea91a2d9-0557-490d-9057-8d57a425d430" />
+Figs. 6 and 7. Nsight Systems timelines comparing baseline and optimized 5-epoch training runs. Fig. 6 shows the baseline configuration with a total runtime of 199.871 s, while Fig. 7 shows the optimized configuration with a total runtime of 66.714 s. The optimized run achieved an approximately 66.6% runtime reduction (~3.0× speedup) through data pipeline tuning, including adjustment of num_workers, use of persistent_workers, pinned memory with non_blocking=True, and prefetch_factor=4.
+
+---
 
 ## Performance Summary
 
-The profiling results from **Figures 1–4** are summarized below.
+## Performance Summary
 
-Increasing `num_workers` allows PyTorch DataLoaders to prefetch data on the CPU while the GPU is executing training work, which helps hide input pipeline latency and improve throughput.
+The profiling results from **Figures 1–7** are summarized below.
+
+Early profiling focused on how `DataLoader` worker counts affected GPU utilization and end-to-end training time, while later profiling evaluated multi-epoch behavior and a fully tuned data pipeline. Overall, the results show that moderate CPU-side parallelism improves throughput by reducing input pipeline stalls and keeping the GPU more consistently supplied with data, but overly aggressive worker counts or applying multiprocessing to smaller evaluation workloads can introduce overhead that offsets those gains.
 
 | Configuration | Observed Effect |
 |---------------|-----------------|
-| Baseline (`num_workers=0`) | Higher training time and visible gaps between batch executions |
-| `num_workers=4` for all DataLoaders | Training time reduced from ~28.2 s to ~12.4 s |
-| `num_workers=4` only for training | Best overall balance between training throughput and evaluation overhead |
-| `num_workers=8` for training | Training slowed to ~18.9 s, showing diminishing returns from extra workers |
-| Two-epoch run (`num_workers=4` for training, `2` for validation/test) | Worker startup overhead is concentrated at the beginning of the first epoch, while later epochs benefit from improved steady-state throughput |
+| **Figure 1 — Baseline (`num_workers=0`)** | Highest training time, with visible idle gaps between batch executions that suggest CPU-side data loading and preprocessing overhead. |
+| **Figure 2 — `num_workers=4` for all DataLoaders** | Training time dropped substantially, with `train:epoch_1` decreasing from about **28.2 s** to **12.4 s**, showing improved input pipeline throughput; however, validation and test overhead became more noticeable. |
+| **Figure 3 — `num_workers=4` for training only** | Restoring validation and test worker counts to 0 reduced unnecessary evaluation overhead and produced a better overall balance between training throughput and end-to-end runtime. |
+| **Figure 4 — `num_workers=8` for training** | Increasing workers beyond 4 slowed training to about **18.9 s**, indicating diminishing returns and added multiprocessing overhead. |
+| **Figure 5 — Two-epoch run (`num_workers=4` for training, `2` for validation/test)** | Showed that worker startup overhead is concentrated near the beginning of the first epoch, while later epochs benefit from a more stable steady-state pipeline. |
+| **Figure 6 — Baseline 5-epoch run** | The untuned 5-epoch configuration required **199.871 s**, providing a longer-horizon baseline for end-to-end comparison. |
+| **Figure 7 — Optimized 5-epoch run** | The fully tuned configuration completed in **66.714 s**, a **66.6% runtime reduction** and roughly **3.0× speedup**, achieved through tuning `num_workers`, enabling `persistent_workers`, using pinned memory with `non_blocking=True`, and setting `prefetch_factor=4`. |
 
-Overall, these results show that moderate DataLoader parallelism improves training throughput by reducing input pipeline stalls and keeping the GPU fed with data more consistently. However, excessive worker counts or applying multiprocessing to smaller evaluation workloads can introduce overhead that outweighs the performance benefit.
+Overall, **Figures 1–7** show a clear progression from identifying CPU-side input pipeline stalls to validating a more efficient steady-state training configuration. Moderate `DataLoader` parallelism improved overlap between CPU data preparation and GPU execution, while the final tuned pipeline demonstrated that reducing worker startup overhead and improving transfer behavior can significantly lower end-to-end training time across longer runs.
