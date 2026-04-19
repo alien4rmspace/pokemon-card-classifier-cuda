@@ -65,8 +65,9 @@ Note: The blue blocked state regions suggest that the validation and test phases
 
 ---
 <img width="1340" height="437" alt="Screenshot 2026-04-15 173103" src="https://github.com/user-attachments/assets/5ab77633-e184-4a32-beb4-0dd23d02f9fc" />
+Fig. 6. Base-line 5-epoch training run.
 <img width="1187" height="433" alt="Screenshot 2026-04-15 173552" src="https://github.com/user-attachments/assets/ea91a2d9-0557-490d-9057-8d57a425d430" />
-Figs. 6 and 7. Nsight Systems timelines comparing baseline and optimized 5-epoch training runs. Fig. 6 shows the baseline configuration with a total runtime of 199.871 s, while Fig. 7 shows the optimized configuration with a total runtime of 66.714 s. The optimized run achieved an approximately 66.6% runtime reduction (~3.0× speedup) through data pipeline tuning, including adjustment of num_workers, use of persistent_workers, pinned memory with non_blocking=True, and prefetch_factor=4.
+Fig. 7. Nsight Systems timelines comparing baseline and optimized 5-epoch training runs. Fig. 6 shows the baseline configuration with a total runtime of 199.871 s, while Fig. 7 shows the optimized configuration with a total runtime of 66.714 s. The optimized run achieved an approximately 66.6% runtime reduction (~3.0× speedup) through data pipeline tuning, including adjustment of num_workers, use of persistent_workers, pinned memory with non_blocking=True, and prefetch_factor=4.
 
 ---
 
