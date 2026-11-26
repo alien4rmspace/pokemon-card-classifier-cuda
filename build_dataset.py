@@ -1,16 +1,19 @@
 import asyncio
+import hashlib
 import random
 import re
 import shutil
+from collections import defaultdict
 from pathlib import Path
 
 import aiohttp
+from PIL import Image
 from tcgdexsdk import TCGdex, Query
 
 DOWNLOAD_CARDS = True
 SPLIT_CARDS = True
 
-random.seed(42)
+SPLIT_SEED = 42
 
 RAW_ROOT = Path("data/pokemon_cards/raw")
 SPLIT_ROOT = Path("data/pokemon_cards/split")
@@ -18,6 +21,12 @@ SPLIT_ROOT = Path("data/pokemon_cards/split")
 TRAIN_RATIO = 0.8
 VAL_RATIO = 0.1
 TEST_RATIO = 0.1
+
+# Max differing bits (of 256) for two images to count as the same artwork.
+# Reprints of one illustration across sets land as high as ~38 because of
+# different borders and holo patterns, so err high: over-grouping only makes
+# the test set stricter, while under-grouping leaks reprints into it.
+NEAR_DUPLICATE_MAX_BITS = 40
 
 MAX_CONCURRENT_CARDS = 30
 REQUEST_TIMEOUT = aiohttp.ClientTimeout(total=60)
@@ -47,27 +56,92 @@ def normalize_pokemon_label(card_name: str) -> str:
 
     return name
 
-def split_dataset(source_root: Path, split_root: Path) -> None:
-    classes = [folder for folder in source_root.iterdir() if folder.is_dir()]
+def _content_hash(path: Path) -> str:
+    return hashlib.md5(path.read_bytes()).hexdigest()
+
+
+def _perceptual_hash(path: Path) -> int:
+    """256-bit difference hash: each bit says whether a pixel is brighter than its right neighbour."""
+    with Image.open(path) as img:
+        pixels = img.convert("L").resize((17, 16), Image.BILINEAR).tobytes()
+
+    bits = 0
+    for row in range(16):
+        for col in range(16):
+            i = row * 17 + col
+            bits = (bits << 1) | (pixels[i + 1] > pixels[i])
+    return bits
+
+
+def group_duplicates(image_files: list[Path]) -> list[list[Path]]:
+    """Drop exact copies, then group reprints of the same artwork.
+
+    Each group goes to a single split, so an image (or a reprint of it) can
+    never be in both train and test.
+    """
+    unique: dict[str, Path] = {}
+    for path in image_files:
+        unique.setdefault(_content_hash(path), path)
+
+    files = list(unique.values())
+    hashes = [_perceptual_hash(path) for path in files]
+
+    parent = list(range(len(files)))
+
+    def find(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    for i in range(len(files)):
+        for j in range(i + 1, len(files)):
+            if (hashes[i] ^ hashes[j]).bit_count() <= NEAR_DUPLICATE_MAX_BITS:
+                parent[find(i)] = find(j)
+
+    groups: dict[int, list[Path]] = defaultdict(list)
+    for i, path in enumerate(files):
+        groups[find(i)].append(path)
+    return list(groups.values())
+
+
+def split_dataset(source_root: Path, split_root: Path, seed: int = SPLIT_SEED) -> None:
+    rng = random.Random(seed)
+
+    # Start from empty split folders. Copying into folders left by an earlier
+    # run is what let the same image end up in both train and test.
+    for split_name in ("train", "val", "test"):
+        split_dir = split_root / split_name
+        if split_dir.exists():
+            shutil.rmtree(split_dir)
+
+    classes = sorted(folder for folder in source_root.iterdir() if folder.is_dir())
 
     for class_dir in classes:
         class_name = class_dir.name
-        image_files = [f for f in class_dir.iterdir() if f.is_file()]
-        random.shuffle(image_files)
+        # Sort before shuffling so the split depends only on the seed, not on
+        # the order the filesystem lists files in.
+        image_files = sorted(f for f in class_dir.iterdir() if f.is_file())
+        groups = group_duplicates(image_files)
+        rng.shuffle(groups)
 
-        total = len(image_files)
-        train_count = int(total * TRAIN_RATIO)
-        val_count = int(total * VAL_RATIO)
+        total = sum(len(group) for group in groups)
+        train_target = int(total * TRAIN_RATIO)
+        val_target = train_target + int(total * VAL_RATIO)
 
-        train_files = image_files[:train_count]
-        val_files = image_files[train_count:train_count + val_count]
-        test_files = image_files[train_count + val_count:]
+        splits: dict[str, list[Path]] = {"train": [], "val": [], "test": []}
+        assigned = 0
+        for group in groups:
+            if assigned < train_target:
+                split_name = "train"
+            elif assigned < val_target:
+                split_name = "val"
+            else:
+                split_name = "test"
+            splits[split_name].extend(group)
+            assigned += len(group)
 
-        for split_name, split_files in [
-            ("train", train_files),
-            ("val", val_files),
-            ("test", test_files),
-        ]:
+        for split_name, split_files in splits.items():
             split_dir = split_root / split_name / class_name
             split_dir.mkdir(parents=True, exist_ok=True)
 
@@ -75,8 +149,9 @@ def split_dataset(source_root: Path, split_root: Path) -> None:
                 shutil.copy2(file_path, split_dir / file_path.name)
 
         print(
-            f"{class_name}: total={total}, "
-            f"train={len(train_files)}, val={len(val_files)}, test={len(test_files)}"
+            f"{class_name}: total={total} (dropped {len(image_files) - total} exact copies), "
+            f"groups={len(groups)}, train={len(splits['train'])}, "
+            f"val={len(splits['val'])}, test={len(splits['test'])}"
         )
 
 
