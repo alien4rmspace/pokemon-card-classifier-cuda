@@ -5,7 +5,7 @@ A deep learning image classification project built with PyTorch and accelerated 
 ## Features
 
 - Asynchronous Pokémon card image collection using TCGdex and aiohttp
-- Automatic dataset organization and train/validation/test splitting
+- Reproducible, leak-free train/validation/test splitting (duplicates and reprints never cross splits)
 - ResNet-18 fine-tuning in PyTorch
 - CUDA-accelerated training and inference
 - NVIDIA Nsight Systems profiling with NVTX markers
@@ -26,6 +26,19 @@ This project was built to learn GPU-accelerated deep learning in a practical, en
 - aiohttp
 - TCGdex API / SDK
 
+## Results
+
+| | |
+|---|---|
+| Model | ResNet-18 pretrained on ImageNet, all layers fine-tuned |
+| Classes | 52 Pokémon |
+| Dataset | 1,988 unique card images (1,572 train / 170 validation / 246 test) |
+| **Test accuracy** | **82.9%** (204 / 246) |
+
+Training setup: 20 epochs, Adam (lr = 0.001), batch size 32, 224×224 inputs with random rotation (±10°). The reported model is the checkpoint with the best validation accuracy (83.5% at epoch 16). The final-epoch model scores 78.9% on the test set.
+
+The test set shares no images, and no reprints of the same artwork, with the training or validation sets (see [Leak-Free Data Splits](#leak-free-data-splits)).
+
 ## Data Cleaning / Label Normalization
 
 Raw card names from TCGdex often include card-specific mechanics, prefixes, and variants that are not useful for Pokémon-level classification. To keep labels consistent, the dataset pipeline normalizes card names to the base Pokémon identity.
@@ -37,6 +50,19 @@ Examples:
 - `ns_darmanitan` → removed or normalized because the prefix is not informative for Pokémon identity
 
 This cleaning step reduces noisy labels, merges variant-specific card names into a shared Pokémon class, and improves dataset consistency for supervised learning.
+
+## Leak-Free Data Splits
+
+An earlier version of the dataset reported 93.5% test accuracy, but 214 of its 402 test images were exact copies of images in the training or validation sets. Re-running the split had copied files into folders left over from previous runs, and some classes had every card downloaded twice under different filenames. Of the 2,878 images in that dataset, only 1,988 were unique.
+
+`split_dataset` in `build_dataset.py` now:
+
+- Clears the train/validation/test folders before writing, so files from an earlier run can't linger in a different split
+- Drops exact duplicates (matched by MD5 hash)
+- Groups reprints of the same artwork (matched by a perceptual hash) and keeps each group in a single split, since reprints differ only in borders, set symbols, and holo patterns
+- Sorts files before the seeded shuffle, so the same seed produces the same split on any machine
+
+After the fix, no exact copy or reprint appears in more than one split, and test accuracy dropped from the inflated 93.5% to 82.9%.
 
 ## Profiling & Performance Analysis
 
