@@ -37,7 +37,7 @@ This project was built to learn GPU-accelerated deep learning in a practical, en
 
 Training setup: 20 epochs, Adam (lr = 0.001), batch size 32, 224×224 inputs with random rotation (±10°). The reported model is the checkpoint with the best validation accuracy (83.5% at epoch 16). The final-epoch model scores 78.9% on the test set.
 
-The test set shares no images, and no reprints of the same artwork, with the training or validation sets (see [Leak-Free Data Splits](#leak-free-data-splits)).
+The test set shares no images, and no reprints of the same artwork, with the training or validation sets.
 
 ## Data Cleaning / Label Normalization
 
@@ -50,19 +50,6 @@ Examples:
 - `ns_darmanitan` → removed or normalized because the prefix is not informative for Pokémon identity
 
 This cleaning step reduces noisy labels, merges variant-specific card names into a shared Pokémon class, and improves dataset consistency for supervised learning.
-
-## Leak-Free Data Splits
-
-An earlier version of the dataset reported 93.5% test accuracy, but 214 of its 402 test images were exact copies of images in the training or validation sets. Re-running the split had copied files into folders left over from previous runs, and some classes had every card downloaded twice under different filenames. Of the 2,878 images in that dataset, only 1,988 were unique.
-
-`split_dataset` in `build_dataset.py` now:
-
-- Clears the train/validation/test folders before writing, so files from an earlier run can't linger in a different split
-- Drops exact duplicates (matched by MD5 hash)
-- Groups reprints of the same artwork (matched by a perceptual hash) and keeps each group in a single split, since reprints differ only in borders, set symbols, and holo patterns
-- Sorts files before the seeded shuffle, so the same seed produces the same split on any machine
-
-After the fix, no exact copy or reprint appears in more than one split, and test accuracy dropped from the inflated 93.5% to 82.9%.
 
 ## Profiling & Performance Analysis
 
